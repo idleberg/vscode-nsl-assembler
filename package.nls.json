@@ -1,0 +1,4 @@
+{
+  "nslAssemblerDefaultArgs": "Specify the default arguments for [nsL Assembler](https://github.com/NSIS-Dev/nsl-assembler)",
+  "nslAssemblerPathToJar": "Specify the full path to `nsL.jar`"
+}

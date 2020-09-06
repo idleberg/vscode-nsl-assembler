@@ -1,0 +1,16 @@
+# Development
+*.map
+lib/
+tsconfig.tsbuildinfo
+
+# Package managers
+bower_components/
+node_modules/
+npm-debug.log*
+vendor/
+yarn.lock
+
+# Project specific
+*.vsix
+images/logo.svg
+todo.md

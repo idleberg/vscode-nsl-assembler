@@ -8,7 +8,7 @@ import { basename, dirname, extname, join } from 'path';
 import { getConfig } from 'vscode-get-config';
 
 async function clearOutput(channel): Promise<void> {
-  const { alwaysShowOutput } = await getConfig();
+  const { alwaysShowOutput } = await getConfig('nsl-assembler');
 
   channel.clear();
   if (alwaysShowOutput === true) {

@@ -1,3 +1,7 @@
+# v1.1.2 [#](https://github.com/idleberg/vscode-nsl-assembler/releases/tag/1.1.2)
+
+- fix `getConfig()` call
+
 # v1.1.1 [#](https://github.com/idleberg/vscode-nsl-assembler/releases/tag/1.1.1)
 
 - fix linting error

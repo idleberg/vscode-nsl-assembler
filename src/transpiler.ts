@@ -18,7 +18,7 @@ async function transpile(): Promise<void> {
     return;
   }
 
-  const { customArguments, pathToJar, showNotifications } = getConfig();
+  const { customArguments, pathToJar, showNotifications } = getConfig('nsl-assembler');
   const document = window.activeTextEditor.document;
 
   if (customArguments.length) {

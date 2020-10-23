@@ -1,3 +1,7 @@
+# v1.1.1 [#](https://github.com/idleberg/vscode-nsl-assembler/releases/tag/1.1.1)
+
+- fix linting error
+
 # v1.1.0 [#](https://github.com/idleberg/vscode-nsl-assembler/releases/tag/1.1.0)
 
 - add support for variable substition when reading config

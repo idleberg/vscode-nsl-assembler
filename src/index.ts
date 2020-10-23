@@ -11,6 +11,6 @@ async function activate(context: vscode.ExtensionContext) {
       return transpile();
     })
   );
-};
+}
 
 export { activate };

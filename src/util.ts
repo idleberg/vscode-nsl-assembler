@@ -1,25 +1,19 @@
-'use strict';
-
 import {
   commands,
   window,
-  workspace,
-  WorkspaceConfiguration
+  workspace
 } from 'vscode';
 
 import { basename, dirname, extname, join } from 'path';
+import { getConfig } from 'vscode-get-config';
 
-function clearOutput(channel): void {
-  const config: WorkspaceConfiguration = getConfig();
+async function clearOutput(channel): Promise<void> {
+  const { alwaysShowOutput } = await getConfig();
 
   channel.clear();
-  if (config.alwaysShowOutput === true) {
+  if (alwaysShowOutput === true) {
     channel.show(true);
   }
-}
-
-function getConfig(): WorkspaceConfiguration {
-  return workspace.getConfiguration('nsl-assembler');
 }
 
 function onSuccess(choice): void {
@@ -54,7 +48,6 @@ function validateConfig(setting: string): void {
 
 export {
   clearOutput,
-  getConfig,
   onSuccess,
   validateConfig
 };

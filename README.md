@@ -28,6 +28,12 @@ Download the package extension from the the [release page](https://github.com/id
 $ code --install-extension nsl-assembler-*.vsix
 ```
 
+Alternatively, you can download the packaged extension from the [Open VSX Registry](https://open-vsx.org/) or install it using the [`ovsx`](https://www.npmjs.com/package/ovsx) command-line tool:
+
+```bash
+$ ovsx get idleberg.nsl-assembler
+```
+
 ### Clone Repository
 
 Change to your Visual Studio Code extensions directory:

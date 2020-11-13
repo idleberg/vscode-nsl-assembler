@@ -31,8 +31,11 @@
         "url": "https://github.com/idleberg/vscode-nsl-assembler/issues"
     },
     "main": "./lib/extension",
+    "extensionDependencies": [
+        "idleberg.nsis"
+    ],
     "dependencies": {
-        "vscode-get-config": "^0.2.0"
+        "vscode-get-config": "^0.3.0"
     },
     "devDependencies": {
         "@types/node": "^14.6.4",

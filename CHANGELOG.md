@@ -1,3 +1,8 @@
+# v1.2.0 [#](https://github.com/idleberg/vscode-nsl-assembler/releases/tag/1.2.0)
+
+- add `ìdleberg.nsis` package dependency
+- update dependencies
+
 # v1.1.2 [#](https://github.com/idleberg/vscode-nsl-assembler/releases/tag/1.1.2)
 
 - fix `getConfig()` call

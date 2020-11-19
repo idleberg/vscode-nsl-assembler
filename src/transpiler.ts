@@ -21,7 +21,7 @@ async function transpile(): Promise<void> {
   const { customArguments, pathToJar, showNotifications } = getConfig('nsl-assembler');
   const document = window.activeTextEditor.document;
 
-  if (customArguments.length) {
+  if (customArguments?.length) {
     validateConfig(customArguments);
   }
 

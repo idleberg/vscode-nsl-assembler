@@ -7,7 +7,7 @@ import {
 import { basename, dirname, extname, join } from 'path';
 import { getConfig } from 'vscode-get-config';
 
-async function clearOutput(channel): Promise<void> {
+async function clearOutput(channel: unknown): Promise<void> {
   const { alwaysShowOutput } = await getConfig('nsl-assembler');
 
   channel.clear();
@@ -16,15 +16,15 @@ async function clearOutput(channel): Promise<void> {
   }
 }
 
-function onSuccess(choice): void {
-  let document = window.activeTextEditor.document;
+function onSuccess(choice: string): void {
+  const document = window.activeTextEditor.document;
 
   if (choice === 'Open') {
-    let dirName = dirname(document.fileName);
-    let extName = extname(document.fileName);
-    let baseName = basename(document.fileName, extName);
-    let outName = baseName + '.nsi';
-    let nsisFile = join(dirName, outName);
+    const dirName = dirname(document.fileName);
+    const extName = extname(document.fileName);
+    const baseName = basename(document.fileName, extName);
+    const outName = baseName + '.nsi';
+    const nsisFile = join(dirName, outName);
 
     workspace.openTextDocument(nsisFile)
     .then( (doc) => {

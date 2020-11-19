@@ -39,16 +39,16 @@ async function transpile(): Promise<void> {
     const nslCmd = spawn('java', compilerArguments);
     const stdErr = [];
 
-    nslCmd.stdout.on('data', (line: Array<any>) => {
+    nslCmd.stdout.on('data', (line: Array<unknown>) => {
       nslChannel.appendLine(line.toString());
     });
 
-    nslCmd.stderr.on('data', (line: Array<any>) => {
+    nslCmd.stderr.on('data', (line: Array<unknown>) => {
       stdErr.push(line);
       nslChannel.appendLine(line.toString());
     });
 
-    nslCmd.on('exit', (code) => {
+    nslCmd.on('exit', () => {
       if (stdErr.length === 0) {
         if (showNotifications) {
           window.showInformationMessage(`Transpiled successfully -- ${document.fileName}`, 'Open')

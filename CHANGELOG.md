@@ -1,6 +1,7 @@
 # v1.2.0 [#](https://github.com/idleberg/vscode-nsl-assembler/releases/tag/1.2.0)
 
 - add `ìdleberg.nsis` package dependency
+- lint with ESLint
 - update dependencies
 
 # v1.1.2 [#](https://github.com/idleberg/vscode-nsl-assembler/releases/tag/1.1.2)

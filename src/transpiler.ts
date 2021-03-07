@@ -13,7 +13,12 @@ const nslChannel = window.createOutputChannel('nsL Assembler');
 async function transpile(): Promise<void> {
   await clearOutput(nslChannel);
 
-  if (window.activeTextEditor['_documentData']['_languageId'] !== 'nsl-assembler') {
+  // TODO Breaking change in VSCode 1.54, remove in future
+  const languageID = window.activeTextEditor['_documentData']
+    ? window.activeTextEditor['_documentData']['_languageId']
+    : window.activeTextEditor['document']['languageId'];
+
+  if (languageID !== 'nsl-assembler') {
     nslChannel.appendLine('This command is only available for nsL Assembler files');
     return;
   }

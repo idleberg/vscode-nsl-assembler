@@ -1,6 +1,7 @@
 # v1.2.1 [#](https://github.com/idleberg/vscode-nsl-assembler/releases/tag/v1.2.1)
 
 - fix language detection for VSCode v1.54
+- update dependencies
 
 # v1.2.0 [#](https://github.com/idleberg/vscode-nsl-assembler/releases/tag/v1.2.0)
 

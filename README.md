@@ -8,7 +8,6 @@
 [![Visual Studio Marketplace](https://vsmarketplacebadge.apphb.com/installs-short/idleberg.nsl-assembler.svg?style=flat-square)](https://marketplace.visualstudio.com/items?itemName=idleberg.nsl-assembler)
 [![CircleCI](https://flat.badgen.net/circleci/github/idleberg/vscode-nsl-assembler)](https://circleci.com/gh/idleberg/vscode-nsl-assembler)
 [![David](https://flat.badgen.net/david/dep/idleberg/vscode-nsl-assembler)](https://david-dm.org/idleberg/vscode-nsl-assembler)
-[![Gitter](https://flat.badgen.net/badge/chat/on%20gitter/ff69b4)](https://gitter.im/NSIS-Dev/vscode)
 
 Language syntax, IntelliSense and build system for [nsL Assembler](https://github.com/NSIS-Dev/nsl-assembler).
 

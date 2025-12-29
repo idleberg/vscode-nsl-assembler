@@ -15,6 +15,7 @@
 		"build:code": "tsdown",
 		"build:image": "sharp resize 1024 1024 --input src/logo.svg --output resources/logo.png",
 		"dev": "npm run start",
+		"fix": "biome check --apply",
 		"lint": "biome check",
 		"prepare": "lefthook install",
 		"publish:ovsx": "ovsx publish --no-dependencies",

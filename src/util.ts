@@ -3,7 +3,6 @@ import { basename, dirname, extname, join } from 'node:path';
 import { type OutputChannel, window, workspace } from 'vscode';
 import { getConfig } from 'vscode-get-config';
 
-// eslint-disable-next-line
 export async function clearOutput(channel: OutputChannel): Promise<void> {
 	const { alwaysShowOutput } = await getConfig('nsl-assembler');
 

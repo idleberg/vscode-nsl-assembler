@@ -75,21 +75,13 @@ export async function transpile(): Promise<void> {
 }
 
 function handleTranspileError(stdErr: string[]): void {
-	const { showNotifications } = getConfig('nsl-assembler');
-
 	nslChannel.show(true);
 
-	if (showNotifications) {
-		window.showErrorMessage('Transpile failed, see output for details');
-	}
+	window.showErrorMessage('Transpile failed, see output for details');
 	console.error(stdErr.join('\n'));
 }
 
 async function handleTranspileSuccess(fileName: string): Promise<void> {
-	const { showNotifications } = getConfig('nsl-assembler');
-
-	if (!showNotifications) return;
-
 	const choice = await window.showInformationMessage(`Transpiled successfully -- ${fileName}`, 'Open');
 
 	if (choice) {

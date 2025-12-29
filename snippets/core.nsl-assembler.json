@@ -871,6 +871,22 @@
     "body": "SubCaption(${1});",
     "prefix": "SubCaption()"
   },
+  "Target()": {
+    "body": "Target(\"${1}\");",
+    "prefix": "Target()"
+  },
+  "Target(amd64-unicode)": {
+    "body": "Target(\"amd64-unicode\");",
+    "prefix": "Target(amd64-unicode)"
+  },
+  "Target(x86-ansi)": {
+    "body": "Target(\"x86-ansi\");",
+    "prefix": "Target(x86-ansi)"
+  },
+  "Target(x86-unicode)": {
+    "body": "Target(\"x86-unicode\");",
+    "prefix": "Target(x86-unicode)"
+  },
   "Unicode()": {
     "body": "Unicode(${1});",
     "prefix": "Unicode()"

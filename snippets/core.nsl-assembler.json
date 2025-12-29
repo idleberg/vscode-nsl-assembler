@@ -871,6 +871,18 @@
     "body": "SubCaption(${1});",
     "prefix": "SubCaption()"
   },
+  "Unicode()": {
+    "body": "Unicode(${1});",
+    "prefix": "Unicode()"
+  },
+  "Unicode(true)": {
+    "body": "Unicode(true);",
+    "prefix": "Unicode(true)"
+  },
+  "Unicode(false)": {
+    "body": "Unicode(false);",
+    "prefix": "Unicode(false)"
+  },
   "UninstallButtonText()": {
     "body": "UninstallButtonText(\"${1:text}\");",
     "prefix": "UninstallButtonText()"

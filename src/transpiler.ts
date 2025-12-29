@@ -43,7 +43,7 @@ export async function transpile(): Promise<void> {
 	}
 
 	const defaultArguments: Array<string> = ['-jar', nslJar];
-	const compilerArguments = [...defaultArguments, ...customArguments, document.fileName];
+	const compilerArguments = [...defaultArguments, ...(customArguments ?? []), document.fileName];
 
 	// Let's build
 	const nslCmd = spawn('java', compilerArguments);

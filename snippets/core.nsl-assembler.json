@@ -871,10 +871,6 @@
     "body": "SubCaption(${1});",
     "prefix": "SubCaption()"
   },
-  "UnRegDLL()": {
-    "body": "UnRegDLL(${1});",
-    "prefix": "UnRegDLL()"
-  },
   "UninstallButtonText()": {
     "body": "UninstallButtonText(\"${1:text}\");",
     "prefix": "UninstallButtonText()"
@@ -894,6 +890,10 @@
   "UninstallText()": {
     "body": "UninstallText(\"${1:text}\"${2:, \"${3:subtext}\"});",
     "prefix": "UninstallText()"
+  },
+  "UnRegDLL()": {
+    "body": "UnRegDLL(${1});",
+    "prefix": "UnRegDLL()"
   },
   "VIAddVersionKey()": {
     "body": "VIAddVersionKey(${1});",

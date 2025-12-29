@@ -30,19 +30,17 @@ export async function transpile(): Promise<void> {
 
 	await document.save();
 
-	const nslJar = pathToJar;
-
-	if (typeof nslJar !== 'string' || nslJar.length === 0) {
+	if (typeof pathToJar !== 'string' || pathToJar.length === 0) {
 		window.showErrorMessage('No valid `nsL.jar` was specified in your config');
 		return;
 	}
 
-	if (!(await fileExists(nslJar))) {
+	if (!(await fileExists(pathToJar))) {
 		window.showErrorMessage('The specified `nsL.jar` does not exist');
 		return;
 	}
 
-	const defaultArguments: Array<string> = ['-jar', nslJar];
+	const defaultArguments: Array<string> = ['-jar', pathToJar];
 	const compilerArguments = [...defaultArguments, ...customArguments, document.fileName];
 
 	// Let's build

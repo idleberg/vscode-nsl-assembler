@@ -49,13 +49,13 @@ export async function transpile(): Promise<void> {
 	const nslCmd = spawn('java', compilerArguments);
 	const stdErr: Array<string> = [];
 
-	nslCmd.stdout.on('data', (line: Array<unknown>) => {
+	nslCmd.stdout.on('data', (line: Array<Buffer>) => {
 		const lineString: string = line.toString().trim();
 
 		nslChannel.appendLine(lineString);
 	});
 
-	nslCmd.stderr.on('data', (line: Array<unknown>) => {
+	nslCmd.stderr.on('data', (line: Array<Buffer>) => {
 		const lineString: string = line.toString().trim();
 
 		stdErr.push(lineString);

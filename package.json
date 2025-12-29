@@ -1,168 +1,168 @@
 {
-    "name": "nsl-assembler",
-    "displayName": "nsL Assembler",
-    "description": "Language syntax, IntelliSense and build system for nsL Assembler",
-    "version": "1.2.1",
-    "publisher": "idleberg",
-    "license": "MIT OR GPL-2.0",
-    "author": {
-        "name": "Jan T. Sott",
-        "url": "http://github.com/idleberg"
-    },
-    "scripts": {
-        "build": "gulp && webpack --mode production",
-        "dev": "npm run start",
-        "lint": "eslint ./src && jsonlint --quiet ./snippets/*.json",
-        "postinstall": "node ./node_modules/vscode/bin/install",
-        "start": "webpack --mode none --watch",
-        "test": "npm run lint",
-        "vscode:prepublish": "webpack --mode production"
-    },
-    "keywords": [
-        "nsis",
-        "nsl-assembler"
-    ],
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/idleberg/vscode-nsl-assembler"
-    },
-    "homepage": "https://github.com/idleberg/vscode-nsl-assembler#readme",
-    "bugs": {
-        "url": "https://github.com/idleberg/vscode-nsl-assembler/issues"
-    },
-    "main": "./lib/extension",
-    "extensionDependencies": [
-        "idleberg.nsis"
-    ],
-    "dependencies": {
-        "vscode-get-config": "^0.4.0"
-    },
-    "devDependencies": {
-        "@types/node": "^14.14.11",
-        "@typescript-eslint/eslint-plugin": "^4.9.1",
-        "@typescript-eslint/parser": "^4.9.1",
-        "babel-core": "^6.26.3",
-        "babel-preset-es2015": "^6.24.1",
-        "eslint": "^7.15.0",
-        "eslint-plugin-json": "^2.1.2",
-        "gulp": "^4.0.2",
-        "gulp-raster": "^0.2.0",
-        "gulp-rename": "^2.0.0",
-        "husky": "^4.3.5",
-        "jsonlint": "^1.6.3",
-        "ts-loader": "^8.0.3",
-        "tslint": "^6.1.3",
-        "typescript": "^4.1.2",
-        "vscode": "^1.1.37",
-        "webpack": "^5.10.0",
-        "webpack-cli": "^4.2.0"
-    },
-    "husky": {
-        "hooks": {
-            "pre-commit": "npm run test"
-        }
-    },
-    "icon": "images/logo.png",
-    "galleryBanner": {
-        "color": "#232323",
-        "theme": "dark"
-    },
-    "engines": {
-        "vscode": "^1.0.0"
-    },
-    "categories": [
-        "Programming Languages",
-        "Snippets",
-        "Other"
-    ],
-    "activationEvents": [
-        "onLanguage:nsl-assembler"
-    ],
-    "contributes": {
-        "configuration": {
-            "type": "object",
-            "title": "nsL Assembler",
-            "properties": {
-                "nsl-assembler.pathToJar": {
-                    "type": "string",
-                    "default": "",
-                    "markdownDescription": "%nslAssemblerPathToJar%"
-                },
-                "nsl-assembler.customArguments": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    },
-                    "default": [
-                        "/nomake",
-                        "/nopause"
-                    ],
-                    "markdownDescription": "%nslAssemblerDefaultArgs%"
-                },
-                "nsl-assembler.nsisHome": {
-                    "type": "string",
-                    "default": "",
-                    "description": "Specify the NSIS home directory (tried to detect automatically if not specified)"
-                }
-            }
-        },
-        "languages": [
-            {
-                "id": "nsl-assembler",
-                "aliases": [
-                    "nsL Assembler",
-                    "nsl"
-                ],
-                "extensions": [
-                    ".nsl"
-                ],
-                "configuration": "./config/nsl-assembler.json"
-            }
-        ],
-        "grammars": [
-            {
-                "language": "nsl-assembler",
-                "scopeName": "source.nsl",
-                "path": "./syntaxes/nsl-assembler.tmLanguage"
-            }
-        ],
-        "commands": [
-            {
-                "command": "extension.nsl-assembler.transpile",
-                "title": "Transpile nsL Assembler code",
-                "icon": {
-                    "dark": "./images/icon--build-dark.svg",
-                    "light": "./images/icon--build-light.svg"
-                }
-            }
-        ],
-        "keybindings": [
-            {
-                "key": "ctrl+shift+b",
-                "mac": "cmd+alt+b",
-                "when": "editorFocus && editorLangId == nsl-assembler",
-                "command": "extension.nsl-assembler.transpile"
-            }
-        ],
-        "menus": {
-            "editor/title": [
-                {
-                    "when": "resourceLangId == nsl-assembler",
-                    "command": "extension.nsl-assembler.transpile",
-                    "group": "navigation@1"
-                }
-            ]
-        },
-        "snippets": [
-            {
-                "language": "nsl-assembler",
-                "path": "./snippets/core.nsl-assembler.json"
-            }
-        ]
-    },
-    "babel": {
-        "presets": [
-            "es2015"
-        ]
-    }
+	"name": "nsl-assembler",
+	"displayName": "nsL Assembler",
+	"description": "Language syntax, IntelliSense and build system for nsL Assembler",
+	"version": "1.2.1",
+	"publisher": "idleberg",
+	"license": "MIT OR GPL-2.0",
+	"author": {
+		"name": "Jan T. Sott",
+		"url": "http://github.com/idleberg"
+	},
+	"scripts": {
+		"compile": "npm run build",
+		"build": "concurrently --prefix-colors 'blue,green' 'npm:build:*'",
+		"build:code": "tsdown",
+		"build:image": "sharp resize 1024 1024 --input src/logo.svg --output resources/logo.png",
+		"dev": "npm run start",
+		"fix": "eslint --fix ./src",
+		"lint": "biome check",
+		"prepare": "lefthook install",
+		"publish:ovsx": "ovsx publish --no-dependencies",
+		"publish:vsce": "vsce publish --githubBranch main --no-dependencies",
+		"start": "npm run build -- --watch",
+		"test": "echo \"no tests yet\" && exit 0",
+		"vscode:prepublish": "npm run build"
+	},
+	"keywords": [
+		"nsis",
+		"nsl-assembler"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/idleberg/vscode-nsl-assembler"
+	},
+	"homepage": "https://github.com/idleberg/vscode-nsl-assembler#readme",
+	"bugs": {
+		"url": "https://github.com/idleberg/vscode-nsl-assembler/issues"
+	},
+	"type": "commonjs",
+	"main": "./lib/index.cjs",
+	"extensionDependencies": [
+		"idleberg.nsis"
+	],
+	"dependencies": {
+		"vscode-get-config": "^0.6.2"
+	},
+	"devDependencies": {
+		"@commitlint/cli": "^20.2.0",
+		"@commitlint/config-conventional": "^20.2.0",
+		"@idleberg/configs": "^0.4.1",
+		"@nsis/logo": "0.1.1",
+		"@types/micromatch": "^4.0.10",
+		"@types/node": "24",
+		"@types/vscode": "1.85.0",
+		"@types/which": "^3.0.4",
+		"concurrently": "^9.2.1",
+		"ovsx": "^0.10.7",
+		"sharp-cli": "^5.2.0",
+		"tsdown": "^0.18.3",
+		"typescript": "^5.9.3"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "npm run test"
+		}
+	},
+	"icon": "resources/logo.png",
+	"galleryBanner": {
+		"color": "#232323",
+		"theme": "dark"
+	},
+	"engines": {
+		"vscode": "^1.85.0"
+	},
+	"categories": [
+		"Programming Languages",
+		"Snippets",
+		"Other"
+	],
+	"contributes": {
+		"configuration": {
+			"type": "object",
+			"title": "nsL Assembler",
+			"properties": {
+				"nsl-assembler.pathToJar": {
+					"type": "string",
+					"default": "",
+					"markdownDescription": "%nslAssemblerPathToJar%"
+				},
+				"nsl-assembler.customArguments": {
+					"type": "array",
+					"items": {
+						"type": "string"
+					},
+					"default": [
+						"/nomake",
+						"/nopause"
+					],
+					"markdownDescription": "%nslAssemblerDefaultArgs%"
+				},
+				"nsl-assembler.nsisHome": {
+					"type": "string",
+					"default": "",
+					"description": "Specify the NSIS home directory (tried to detect automatically if not specified)"
+				}
+			}
+		},
+		"languages": [
+			{
+				"id": "nsl-assembler",
+				"aliases": [
+					"nsL Assembler",
+					"nsl"
+				],
+				"extensions": [
+					".nsl"
+				],
+				"configuration": "./config/nsl-assembler.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "nsl-assembler",
+				"scopeName": "source.nsl",
+				"path": "./syntaxes/nsl-assembler.tmLanguage"
+			}
+		],
+		"commands": [
+			{
+				"command": "extension.nsl-assembler.transpile",
+				"title": "Transpile nsL Assembler code",
+				"icon": {
+					"dark": "./resources/icon--build-dark.svg",
+					"light": "./resources/icon--build-light.svg"
+				}
+			}
+		],
+		"keybindings": [
+			{
+				"key": "ctrl+shift+b",
+				"mac": "cmd+alt+b",
+				"when": "editorFocus && editorLangId == nsl-assembler",
+				"command": "extension.nsl-assembler.transpile"
+			}
+		],
+		"menus": {
+			"editor/title": [
+				{
+					"when": "resourceLangId == nsl-assembler",
+					"command": "extension.nsl-assembler.transpile",
+					"group": "navigation@1"
+				}
+			]
+		},
+		"snippets": [
+			{
+				"language": "nsl-assembler",
+				"path": "./snippets/core.nsl-assembler.json"
+			}
+		]
+	},
+	"babel": {
+		"presets": [
+			"es2015"
+		]
+	},
+	"packageManager": "pnpm@10.26.2+sha512.0e308ff2005fc7410366f154f625f6631ab2b16b1d2e70238444dd6ae9d630a8482d92a451144debc492416896ed16f7b114a86ec68b8404b2443869e68ffda6"
 }

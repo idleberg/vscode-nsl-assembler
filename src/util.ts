@@ -1,54 +1,47 @@
-import {
-  commands,
-  window,
-  workspace
-} from 'vscode';
-
-import { basename, dirname, extname, join } from 'path';
+import { basename, dirname, extname, join } from 'node:path';
+import { commands, type OutputChannel, window, workspace } from 'vscode';
 import { getConfig } from 'vscode-get-config';
 
 // eslint-disable-next-line
-async function clearOutput(channel: any): Promise<void> {
-  const { alwaysShowOutput } = await getConfig('nsl-assembler');
+export async function clearOutput(channel: OutputChannel): Promise<void> {
+	const { alwaysShowOutput } = await getConfig('nsl-assembler');
 
-  channel.clear();
-  if (alwaysShowOutput === true) {
-    channel.show(true);
-  }
+	channel.clear();
+	if (alwaysShowOutput === true) {
+		channel.show(true);
+	}
 }
 
-function onSuccess(choice: string): void {
-  const document = window.activeTextEditor.document;
+export async function onSuccess(choice: string): Promise<void> {
+	const editor = window.activeTextEditor;
 
-  if (choice === 'Open') {
-    const dirName = dirname(document.fileName);
-    const extName = extname(document.fileName);
-    const baseName = basename(document.fileName, extName);
-    const outName = baseName + '.nsi';
-    const nsisFile = join(dirName, outName);
+	if (!editor) {
+		return;
+	}
 
-    workspace.openTextDocument(nsisFile)
-    .then( (doc) => {
-      window.showTextDocument(doc);
-    });
-  }
+	const document = editor.document;
+
+	if (choice === 'Open') {
+		const dirName = dirname(document.fileName);
+		const extName = extname(document.fileName);
+		const baseName = basename(document.fileName, extName);
+		const outName = `${baseName}.nsi`;
+		const nsisFile = join(dirName, outName);
+
+		const doc = await workspace.openTextDocument(nsisFile);
+		await window.showTextDocument(doc);
+	}
 }
 
-function validateConfig(setting: string): void {
-  if (typeof setting === 'string') {
-    window.showErrorMessage('The argument handling has been changed in a recent version of this extension. Please adjust your settings before trying again.', 'Open Settings')
-    .then(choice => {
-      if (choice === 'Open Settings') {
-        commands.executeCommand('workbench.action.openSettings', '@ext:idleberg.nsl-assembler');
-      }
-    });
+export async function validateConfig(setting: string): Promise<void> {
+	if (typeof setting === 'string') {
+		const choice = await window.showErrorMessage(
+			'The argument handling has been changed in a recent version of this extension. Please adjust your settings before trying again.',
+			'Open Settings',
+		);
 
-    process.exit();
-  }
+		if (choice === 'Open Settings') {
+			await commands.executeCommand('workbench.action.openSettings', '@ext:idleberg.nsl-assembler');
+		}
+	}
 }
-
-export {
-  clearOutput,
-  onSuccess,
-  validateConfig
-};

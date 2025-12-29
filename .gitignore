@@ -1,16 +1,21 @@
-# Development
-*.map
-lib/
-tsconfig.tsbuildinfo
-
 # Package managers
 bower_components/
 node_modules/
 npm-debug.log*
+package-lock.json
 vendor/
 yarn.lock
 
+# Development
+.eslintcache
+*.map
+tsconfig.tsbuildinfo
+
+# Build
+lib/
+resources/logo.png
+
 # Project specific
 *.vsix
-images/logo.svg
+resources/logo.svg
 todo.md

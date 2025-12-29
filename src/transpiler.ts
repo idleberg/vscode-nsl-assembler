@@ -1,7 +1,7 @@
-import { clearOutput, onSuccess, validateConfig } from './util';
-import { getConfig } from 'vscode-get-config';
-import { spawn } from 'child_process';
+import { spawn } from 'node:child_process';
 import { window } from 'vscode';
+import { getConfig } from 'vscode-get-config';
+import { clearOutput, onSuccess, validateConfig } from './util.ts';
 
 const nslChannel = window.createOutputChannel('nsL Assembler');
 
@@ -10,62 +10,68 @@ const nslChannel = window.createOutputChannel('nsL Assembler');
  *  https://sourceforge.net/projects/nslassembler/
  *  https://github.com/NSIS-Dev/nsl-assembler
  */
-async function transpile(): Promise<void> {
-  await clearOutput(nslChannel);
+export async function transpile(): Promise<void> {
+	await clearOutput(nslChannel);
 
-  // TODO Breaking change in VSCode 1.54, remove in future
-  const languageID = window.activeTextEditor['_documentData']
-    ? window.activeTextEditor['_documentData']['_languageId']
-    : window.activeTextEditor['document']['languageId'];
+	if (!window.activeTextEditor) {
+		window.showErrorMessage('No active editor found');
+		return;
+	}
 
-  if (languageID !== 'nsl-assembler') {
-    nslChannel.appendLine('This command is only available for nsL Assembler files');
-    return;
-  }
+	const editor = window.activeTextEditor;
 
-  const { customArguments, pathToJar, showNotifications } = getConfig('nsl-assembler');
-  const document = window.activeTextEditor.document;
+	if (editor.document.languageId !== 'nsl-assembler') {
+		nslChannel.appendLine('This command is only available for nsL Assembler files');
+		return;
+	}
 
-  if (customArguments?.length) {
-    validateConfig(customArguments);
-  }
+	const { customArguments, pathToJar, showNotifications } = getConfig('nsl-assembler');
+	const document = window.activeTextEditor.document;
 
-  document.save().then( () => {
-    const nslJar = pathToJar;
+	if (customArguments?.length) {
+		await validateConfig(customArguments);
+	}
 
-    if (typeof nslJar === 'undefined' || nslJar === null) {
-      return window.showErrorMessage('No valid `nsL.jar` was specified in your config');
-    }
+	await document.save();
 
-    const defaultArguments: Array<string> = ['-jar', nslJar];
-    const compilerArguments = [ ...defaultArguments, ...customArguments, document.fileName ];
+	const nslJar = pathToJar;
 
-    // Let's build
-    const nslCmd = spawn('java', compilerArguments);
-    const stdErr = [];
+	if (typeof nslJar === 'undefined' || nslJar === null) {
+		window.showErrorMessage('No valid `nsL.jar` was specified in your config');
+		return;
+	}
 
-    nslCmd.stdout.on('data', (line: Array<unknown>) => {
-      nslChannel.appendLine(line.toString());
-    });
+	const defaultArguments: Array<string> = ['-jar', nslJar];
+	const compilerArguments = [...defaultArguments, ...customArguments, document.fileName];
 
-    nslCmd.stderr.on('data', (line: Array<unknown>) => {
-      stdErr.push(line);
-      nslChannel.appendLine(line.toString());
-    });
+	// Let's build
+	const nslCmd = spawn('java', compilerArguments);
+	const stdErr: Array<unknown> = [];
 
-    nslCmd.on('exit', () => {
-      if (stdErr.length === 0) {
-        if (showNotifications) {
-          window.showInformationMessage(`Transpiled successfully -- ${document.fileName}`, 'Open')
-          .then(onSuccess);
-        }
-      } else {
-        nslChannel.show(true);
-        if (showNotifications) window.showErrorMessage('Transpile failed, see output for details');
-        if (stdErr.length > 0) console.error(stdErr.join('\n'));
-      }
-    });
-  });
+	nslCmd.stdout.on('data', (line: Array<unknown>) => {
+		nslChannel.appendLine(line.toString());
+	});
+
+	nslCmd.stderr.on('data', (line: Array<unknown>) => {
+		stdErr.push(line);
+		nslChannel.appendLine(line.toString());
+	});
+
+	await new Promise<void>((resolve) => {
+		nslCmd.on('exit', async () => {
+			if (stdErr.length === 0) {
+				if (showNotifications) {
+					const choice = await window.showInformationMessage(`Transpiled successfully -- ${document.fileName}`, 'Open');
+					if (choice) {
+						await onSuccess(choice);
+					}
+				}
+			} else {
+				nslChannel.show(true);
+				if (showNotifications) window.showErrorMessage('Transpile failed, see output for details');
+				if (stdErr.length > 0) console.error(stdErr.join('\n'));
+			}
+			resolve();
+		});
+	});
 }
-
-export { transpile };

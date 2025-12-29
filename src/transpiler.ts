@@ -1,7 +1,7 @@
 import { spawn } from 'node:child_process';
 import { window } from 'vscode';
 import { getConfig } from 'vscode-get-config';
-import { clearOutput, onSuccess } from './util.ts';
+import { clearOutput, fileExists, onSuccess } from './util.ts';
 
 const nslChannel = window.createOutputChannel('nsL Assembler');
 
@@ -32,8 +32,13 @@ export async function transpile(): Promise<void> {
 
 	const nslJar = pathToJar;
 
-	if (typeof nslJar === 'undefined' || nslJar === null) {
+	if (typeof nslJar !== 'string' || nslJar.length === 0) {
 		window.showErrorMessage('No valid `nsL.jar` was specified in your config');
+		return;
+	}
+
+	if (!(await fileExists(nslJar))) {
+		window.showErrorMessage('The specified `nsL.jar` does not exist');
 		return;
 	}
 

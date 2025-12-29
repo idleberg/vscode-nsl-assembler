@@ -62,7 +62,7 @@ export async function transpile(): Promise<void> {
 			if (stdErr.length > 0) {
 				handleTranspileError(stdErr);
 			} else {
-				await handleTranspileSuccess();
+				await handleTranspileSuccess(document.fileName);
 			}
 			resolve();
 		});
@@ -80,12 +80,12 @@ function handleTranspileError(stdErr: string[]): void {
 	console.error(stdErr.join('\n'));
 }
 
-async function handleTranspileSuccess(): Promise<void> {
+async function handleTranspileSuccess(fileName: string): Promise<void> {
 	const { showNotifications } = getConfig('nsl-assembler');
 
 	if (!showNotifications) return;
 
-	const choice = await window.showInformationMessage(`Transpiled successfully -- ${document.fileName}`, 'Open');
+	const choice = await window.showInformationMessage(`Transpiled successfully -- ${fileName}`, 'Open');
 
 	if (choice) {
 		await onSuccess(choice);

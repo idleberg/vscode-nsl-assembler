@@ -32,16 +32,3 @@ export async function onSuccess(choice: string): Promise<void> {
 		await window.showTextDocument(doc);
 	}
 }
-
-export async function validateConfig(setting: string): Promise<void> {
-	if (typeof setting === 'string') {
-		const choice = await window.showErrorMessage(
-			'The argument handling has been changed in a recent version of this extension. Please adjust your settings before trying again.',
-			'Open Settings',
-		);
-
-		if (choice === 'Open Settings') {
-			await commands.executeCommand('workbench.action.openSettings', '@ext:idleberg.nsl-assembler');
-		}
-	}
-}

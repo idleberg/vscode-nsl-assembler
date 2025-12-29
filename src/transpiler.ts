@@ -1,7 +1,7 @@
 import { spawn } from 'node:child_process';
 import { window } from 'vscode';
 import { getConfig } from 'vscode-get-config';
-import { clearOutput, onSuccess, validateConfig } from './util.ts';
+import { clearOutput, onSuccess } from './util.ts';
 
 const nslChannel = window.createOutputChannel('nsL Assembler');
 
@@ -25,12 +25,8 @@ export async function transpile(): Promise<void> {
 		return;
 	}
 
-	const { customArguments, pathToJar, showNotifications } = getConfig('nsl-assembler');
+	const { customArguments, pathToJar } = getConfig('nsl-assembler');
 	const document = window.activeTextEditor.document;
-
-	if (customArguments?.length) {
-		await validateConfig(customArguments);
-	}
 
 	await document.save();
 
@@ -46,32 +42,52 @@ export async function transpile(): Promise<void> {
 
 	// Let's build
 	const nslCmd = spawn('java', compilerArguments);
-	const stdErr: Array<unknown> = [];
+	const stdErr: Array<string> = [];
 
 	nslCmd.stdout.on('data', (line: Array<unknown>) => {
-		nslChannel.appendLine(line.toString());
+		const lineString: string = line.toString().trim();
+
+		nslChannel.appendLine(lineString);
 	});
 
 	nslCmd.stderr.on('data', (line: Array<unknown>) => {
-		stdErr.push(line);
-		nslChannel.appendLine(line.toString());
+		const lineString: string = line.toString().trim();
+
+		stdErr.push(lineString);
+		nslChannel.appendLine(lineString);
 	});
 
 	await new Promise<void>((resolve) => {
 		nslCmd.on('exit', async () => {
-			if (stdErr.length === 0) {
-				if (showNotifications) {
-					const choice = await window.showInformationMessage(`Transpiled successfully -- ${document.fileName}`, 'Open');
-					if (choice) {
-						await onSuccess(choice);
-					}
-				}
+			if (stdErr.length > 0) {
+				handleTranspileError(stdErr);
 			} else {
-				nslChannel.show(true);
-				if (showNotifications) window.showErrorMessage('Transpile failed, see output for details');
-				if (stdErr.length > 0) console.error(stdErr.join('\n'));
+				await handleTranspileSuccess();
 			}
 			resolve();
 		});
 	});
+}
+
+function handleTranspileError(stdErr: string[]): void {
+	const { showNotifications } = getConfig('nsl-assembler');
+
+	nslChannel.show(true);
+
+	if (showNotifications) {
+		window.showErrorMessage('Transpile failed, see output for details');
+	}
+	console.error(stdErr.join('\n'));
+}
+
+async function handleTranspileSuccess(): Promise<void> {
+	const { showNotifications } = getConfig('nsl-assembler');
+
+	if (!showNotifications) return;
+
+	const choice = await window.showInformationMessage(`Transpiled successfully -- ${document.fileName}`, 'Open');
+
+	if (choice) {
+		await onSuccess(choice);
+	}
 }

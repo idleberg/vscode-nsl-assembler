@@ -1,15 +1,16 @@
-⚠️ **This package was once part of [vscode-nsis](https://github.com/idleberg/vscode-nsis), but has been outsourced to prepare its deprecation**
+⚠️ **This package was once part of
+[vscode-nsis](https://github.com/idleberg/vscode-nsis), but has been outsourced
+to prepare its deprecation**
 
 # nsL Assembler for Visual Studio Code
 
-[![The MIT License](https://flat.badgen.net/badge/license/MIT/orange)](http://opensource.org/licenses/MIT)
-[![GNU General Public License](https://flat.badgen.net/badge/license/GPL%20v2/orange)](http://www.gnu.org/licenses/gpl-2.0.html)
-[![GitHub](https://flat.badgen.net/github/release/idleberg/vscode-nsl-assembler)](https://github.com/idleberg/vscode-nsl-assembler/releases)
-[![Visual Studio Marketplace](https://vsmarketplacebadge.apphb.com/installs-short/idleberg.nsl-assembler.svg?style=flat-square)](https://marketplace.visualstudio.com/items?itemName=idleberg.nsl-assembler)
-[![CircleCI](https://flat.badgen.net/circleci/github/idleberg/vscode-nsl-assembler)](https://circleci.com/gh/idleberg/vscode-nsl-assembler)
-[![David](https://flat.badgen.net/david/dep/idleberg/vscode-nsl-assembler)](https://david-dm.org/idleberg/vscode-nsl-assembler)
+[![Version](https://img.shields.io/github/v/release/idleberg/vscode-nsl-assembler?style=for-the-badge)](https://github.com/idleberg/vscode-nsl-assembler/releases)
+[![Visual Studio Marketplace Installs](https://img.shields.io/visual-studio-marketplace/i/idleberg.nsl-assembler?style=for-the-badge&label=Marketplace)](https://marketplace.visualstudio.com/items?itemName=idleberg.nsl-assembler)
+[![Open VSX Downloads](https://img.shields.io/open-vsx/dt/idleberg/nsl-assembler?style=for-the-badge&label=Open%20VSX)](https://open-vsx.org/extension/idleberg/nsl-assembler)
+[![Build](https://img.shields.io/github/actions/workflow/status/idleberg/vscode-nsl-assembler/default.yml?style=for-the-badge)](https://github.com/idleberg/vscode-nsl-assembler/actions)
 
-Language syntax, IntelliSense and build system for [nsL Assembler](https://github.com/NSIS-Dev/nsl-assembler).
+Language syntax, IntelliSense and build system for
+[nsL Assembler](https://github.com/NSIS-Dev/nsl-assembler).
 
 ## Installation
 
@@ -21,13 +22,17 @@ Launch Quick Open, paste the following command, and press <kbd>Enter</kbd>
 
 ### Packaged Extension
 
-Download the package extension from the the [release page](https://github.com/idleberg/vscode-nsl-assembler/releases) and install it from the command-line:
+Download the package extension from the the
+[release page](https://github.com/idleberg/vscode-nsl-assembler/releases) and
+install it from the command-line:
 
 ```bash
 $ code --install-extension nsl-assembler-*.vsix
 ```
 
-Alternatively, you can download the packaged extension from the [Open VSX Registry](https://open-vsx.org/) or install it using the [`ovsx`](https://www.npmjs.com/package/ovsx) command-line tool:
+Alternatively, you can download the packaged extension from the
+[Open VSX Registry](https://open-vsx.org/) or install it using the
+[`ovsx`](https://www.npmjs.com/package/ovsx) command-line tool:
 
 ```bash
 $ ovsx get idleberg.nsl-assembler
@@ -58,20 +63,26 @@ $ git clone https://github.com/idleberg/vscode-nsl-assembler nsl-assembler
 
 ## Usage
 
-To transpile [nsL Assembler][nsl], use the *nsL Assembler: Transpile code* command from the [command-palette](https://code.visualstudio.com/docs/editor/codebasics#_command-palette). The path to `nsL.jar` is specified in your [user settings](https://code.visualstudio.com/docs/customization/userandworkspace).
+To transpile [nsL Assembler][nsl], use the _nsL Assembler: Transpile code_
+command from the
+[command-palette](https://code.visualstudio.com/docs/editor/codebasics#_command-palette).
+The path to `nsL.jar` is specified in your
+[user settings](https://code.visualstudio.com/docs/customization/userandworkspace).
 
 **Example:**
 
 ```json
 {
-  "nsl-assembler.pathToJar": "path\\to\\nsL.jar",
-  "nsl-assembler.customArguments": [
-    "/nomake",
-    "/nopause"
-  ]
+	"nsl-assembler.pathToJar": "path\\to\\nsL.jar",
+	"nsl-assembler.customArguments": [
+		"/nomake",
+		"/nopause"
+	]
 }
 ```
 
 ## License
 
-This work is dual-licensed under [The MIT License](https://opensource.org/licenses/MIT) and the [GNU General Public License, version 2.0](https://opensource.org/licenses/GPL-2.0)
+This work is dual-licensed under
+[The MIT License](https://opensource.org/licenses/MIT) and the
+[GNU General Public License, version 2.0](https://opensource.org/licenses/GPL-2.0)

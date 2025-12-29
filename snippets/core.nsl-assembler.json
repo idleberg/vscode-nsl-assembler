@@ -439,6 +439,34 @@
 		"body": "LogText(${1});",
 		"prefix": "LogText()"
 	},
+	"ManifestDPIAware()": {
+		"body": "ManifestDPIAware(${1});",
+		"prefix": "ManifestDPIAware()"
+	},
+	"ManifestDPIAware(true)": {
+		"body": "ManifestDPIAware(true);",
+		"prefix": "ManifestDPIAware(true)"
+	},
+	"ManifestDPIAware(false)": {
+		"body": "ManifestDPIAware(false);",
+		"prefix": "ManifestDPIAware(false)"
+	},
+	"ManifestLongPathAware()": {
+		"body": "ManifestLongPathAware(${1});",
+		"prefix": "ManifestLongPathAware()"
+	},
+	"ManifestLongPathAware(true)": {
+		"body": "ManifestLongPathAware(true);",
+		"prefix": "ManifestLongPathAware(true)"
+	},
+	"ManifestLongPathAware(false)": {
+		"body": "ManifestLongPathAware(false);",
+		"prefix": "ManifestLongPathAware(false)"
+	},
+	"ManifestSupportedOS()": {
+		"body": "ManifestSupportedOS(${1});",
+		"prefix": "ManifestSupportedOS()"
+	},
 	"MessageBox()": {
 		"body": "MessageBox(${1});",
 		"prefix": "MessageBox()"

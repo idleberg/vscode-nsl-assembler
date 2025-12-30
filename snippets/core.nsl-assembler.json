@@ -99,6 +99,10 @@
 		"body": "Call(${1});",
 		"prefix": "Call()"
 	},
+	"CallInstDLL()": {
+		"body": "CallInstDLL(${1});",
+		"prefix": "CallInstDLL()"
+	},
 	"Caption()": {
 		"body": "Caption(\"${1:caption}\");",
 		"prefix": "Caption()"
@@ -203,6 +207,10 @@
 		"body": "ExecShell(${1});",
 		"prefix": "ExecShell()"
 	},
+	"ExecShellWait()": {
+		"body": "ExecShellWait(${1});",
+		"prefix": "ExecShellWait()"
+	},
 	"ExecWait()": {
 		"body": "ExecWait(${1});",
 		"prefix": "ExecWait()"
@@ -239,6 +247,14 @@
 		"body": "FileReadByte(${1});",
 		"prefix": "FileReadByte()"
 	},
+	"FileReadUTF16LE()": {
+		"body": "FileReadUTF16LE(${1});",
+		"prefix": "FileReadUTF16LE()"
+	},
+	"FileReadWord()": {
+		"body": "FileReadWord(${1});",
+		"prefix": "FileReadWord()"
+	},
 	"FileRecursive()": {
 		"body": "FileRecursive(${1});",
 		"prefix": "FileRecursive()"
@@ -254,6 +270,14 @@
 	"FileWriteByte()": {
 		"body": "FileWriteByte(${1});",
 		"prefix": "FileWriteByte()"
+	},
+	"FileWriteUTF16LE()": {
+		"body": "FileWriteUTF16LE(${1});",
+		"prefix": "FileWriteUTF16LE()"
+	},
+	"FileWriteWord()": {
+		"body": "FileWriteWord(${1});",
+		"prefix": "FileWriteWord()"
 	},
 	"FindClose()": {
 		"body": "FindClose(${1});",
@@ -315,13 +339,29 @@
 		"body": "GetInstDirError(${1});",
 		"prefix": "GetInstDirError()"
 	},
+	"GetKnownFolderPath()": {
+		"body": "GetKnownFolderPath(${1});",
+		"prefix": "GetKnownFolderPath()"
+	},
 	"GetLabelAddress()": {
 		"body": "GetLabelAddress(${1});",
 		"prefix": "GetLabelAddress()"
 	},
+	"GetRegView()": {
+		"body": "GetRegView(${1});",
+		"prefix": "GetRegView()"
+	},
+	"GetShellVarContext()": {
+		"body": "GetShellVarContext(${1});",
+		"prefix": "GetShellVarContext()"
+	},
 	"GetTempFileName()": {
 		"body": "GetTempFileName(${1});",
 		"prefix": "GetTempFileName()"
+	},
+	"GetWinVer()": {
+		"body": "GetWinVer(${1});",
+		"prefix": "GetWinVer()"
 	},
 	"HideWindow()": {
 		"body": "HideWindow(${1});",
@@ -439,6 +479,14 @@
 		"body": "LogText(${1});",
 		"prefix": "LogText()"
 	},
+	"ManifestAppendCustomString()": {
+		"body": "ManifestAppendCustomString(${1});",
+		"prefix": "ManifestAppendCustomString()"
+	},
+	"ManifestDisableWindowFiltering()": {
+		"body": "ManifestDisableWindowFiltering(${1});",
+		"prefix": "ManifestDisableWindowFiltering()"
+	},
 	"ManifestDPIAware()": {
 		"body": "ManifestDPIAware(${1});",
 		"prefix": "ManifestDPIAware()"
@@ -450,6 +498,10 @@
 	"ManifestDPIAware(false)": {
 		"body": "ManifestDPIAware(false);",
 		"prefix": "ManifestDPIAware(false)"
+	},
+	"ManifestGdiScaling()": {
+		"body": "ManifestGdiScaling(${1});",
+		"prefix": "ManifestGdiScaling()"
 	},
 	"ManifestLongPathAware()": {
 		"body": "ManifestLongPathAware(${1});",
@@ -634,6 +686,10 @@
 	"SetCompress(off)": {
 		"body": "SetCompress(\"off\");",
 		"prefix": "SetCompress(off)"
+	},
+	"SetCompressionLevel()": {
+		"body": "SetCompressionLevel(${1});",
+		"prefix": "SetCompressionLevel()"
 	},
 	"SetCompressor()": {
 		"body": "SetCompressor(${1});",
@@ -986,6 +1042,14 @@
 	"WriteRegExpandStr()": {
 		"body": "WriteRegExpandStr(${1});",
 		"prefix": "WriteRegExpandStr()"
+	},
+	"WriteRegNone()": {
+		"body": "WriteRegNone(${1});",
+		"prefix": "WriteRegNone()"
+	},
+	"WriteRegMultiStr()": {
+		"body": "WriteRegMultiStr(${1});",
+		"prefix": "WriteRegMultiStr()"
 	},
 	"WriteRegStr()": {
 		"body": "WriteRegStr(${1});",

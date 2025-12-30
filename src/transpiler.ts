@@ -61,6 +61,15 @@ export async function transpile(): Promise<void> {
 	});
 
 	await new Promise<void>((resolve) => {
+		nslCmd.on('error', (error) => {
+			nslChannel.show(true);
+			nslChannel.appendLine(`Failed to spawn Java process: ${error.message}`);
+			window.showErrorMessage(
+				'Failed to start Java process. Please ensure Java is installed and accessible in your PATH.',
+			);
+			resolve();
+		});
+
 		nslCmd.on('exit', async (code) => {
 			if (stdErr.length > 0 || (code !== null && code !== 0)) {
 				handleTranspileError(stdErr, code);

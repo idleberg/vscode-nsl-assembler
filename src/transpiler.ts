@@ -61,9 +61,9 @@ export async function transpile(): Promise<void> {
 	});
 
 	await new Promise<void>((resolve) => {
-		nslCmd.on('exit', async () => {
-			if (stdErr.length > 0) {
-				handleTranspileError(stdErr);
+		nslCmd.on('exit', async (code) => {
+			if (stdErr.length > 0 || (code !== null && code !== 0)) {
+				handleTranspileError(stdErr, code);
 			} else {
 				await handleTranspileSuccess(document.fileName);
 			}
@@ -72,8 +72,12 @@ export async function transpile(): Promise<void> {
 	});
 }
 
-function handleTranspileError(stdErr: string[]): void {
+function handleTranspileError(stdErr: string[], code: number | null): void {
 	nslChannel.show(true);
+
+	if (code !== null && code !== 0 && stdErr.length === 0) {
+		nslChannel.appendLine(`Process exited with code ${code}`);
+	}
 
 	window.showErrorMessage('Transpile failed, see output for details');
 	console.error(stdErr.join('\n'));

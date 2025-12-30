@@ -1,5 +1,4 @@
 import { access, constants } from 'node:fs/promises';
-import { basename, dirname, extname, join } from 'node:path';
 import { type OutputChannel, window, workspace } from 'vscode';
 import { getConfig } from 'vscode-get-config';
 
@@ -22,11 +21,7 @@ export async function onSuccess(choice: string): Promise<void> {
 	const document = editor.document;
 
 	if (choice === 'Open') {
-		const dirName = dirname(document.fileName);
-		const extName = extname(document.fileName);
-		const baseName = basename(document.fileName, extName);
-		const outName = `${baseName}.nsi`;
-		const nsisFile = join(dirName, outName);
+		const nsisFile = document.fileName.replace(/\.nsl$/, '.nsi');
 
 		try {
 			const doc = await workspace.openTextDocument(nsisFile);

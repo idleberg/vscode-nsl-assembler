@@ -79,5 +79,4 @@ The path to `nsL.jar` is specified in your
 
 ## License
 
-This work is dual-licensed under
-[The MIT License](https://opensource.org/licenses/MIT).
+This work is licensed under [The MIT License](https://opensource.org/licenses/MIT).

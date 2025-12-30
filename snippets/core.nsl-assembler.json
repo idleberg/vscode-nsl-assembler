@@ -480,12 +480,16 @@
 		"prefix": "LogText()"
 	},
 	"ManifestAppendCustomString()": {
-		"body": "ManifestAppendCustomString(${1});",
+		"body": "ManifestAppendCustomString(${1:path}, ${2:string});",
 		"prefix": "ManifestAppendCustomString()"
 	},
 	"ManifestDisableWindowFiltering()": {
 		"body": "ManifestDisableWindowFiltering(${1});",
 		"prefix": "ManifestDisableWindowFiltering()"
+	},
+	"ManifestDisableWindowFiltering(true)": {
+		"body": "ManifestDisableWindowFiltering(true);",
+		"prefix": "ManifestDisableWindowFiltering(true)"
 	},
 	"ManifestDPIAware()": {
 		"body": "ManifestDPIAware(${1});",
@@ -502,6 +506,10 @@
 	"ManifestGdiScaling()": {
 		"body": "ManifestGdiScaling(${1});",
 		"prefix": "ManifestGdiScaling()"
+	},
+	"ManifestGdiScaling(true)": {
+		"body": "ManifestGdiScaling(true);",
+		"prefix": "ManifestGdiScaling(true)"
 	},
 	"ManifestLongPathAware()": {
 		"body": "ManifestLongPathAware(${1});",

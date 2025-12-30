@@ -20,27 +20,27 @@
 		"prefix": "#nsis"
 	},
 	"Abort()": {
-		"body": "Abort(${1});",
+		"body": "Abort($1);",
 		"prefix": "Abort()"
 	},
 	"AddBrandingImage()": {
-		"body": "AddBrandingImage(${1});",
+		"body": "AddBrandingImage($1);",
 		"prefix": "AddBrandingImage()"
 	},
 	"AddIncludeDir()": {
-		"body": "AddIncludeDir(${1});",
+		"body": "AddIncludeDir($1);",
 		"prefix": "AddIncludeDir()"
 	},
 	"AddPluginDir()": {
-		"body": "AddPluginDir(${1});",
+		"body": "AddPluginDir($1);",
 		"prefix": "AddPluginDir()"
 	},
 	"AddSize()": {
-		"body": "AddSize(${1});",
+		"body": "AddSize($1);",
 		"prefix": "AddSize()"
 	},
 	"AllowRootDirInstall()": {
-		"body": "AllowRootDirInstall(${1});",
+		"body": "AllowRootDirInstall($1);",
 		"prefix": "AllowRootDirInstall()"
 	},
 	"AllowRootDirInstall(false)": {
@@ -52,7 +52,7 @@
 		"prefix": "AllowRootDirInstall(true)"
 	},
 	"AllowSkipFiles()": {
-		"body": "AllowSkipFiles(${1});",
+		"body": "AllowSkipFiles($1);",
 		"prefix": "AllowSkipFiles()"
 	},
 	"AllowSkipFiles(off)": {
@@ -64,7 +64,7 @@
 		"prefix": "AllowSkipFiles(on)"
 	},
 	"AutoCloseWindow()": {
-		"body": "AutoCloseWindow(${1});",
+		"body": "AutoCloseWindow($1);",
 		"prefix": "AutoCloseWindow()"
 	},
 	"AutoCloseWindow(false)": {
@@ -76,31 +76,31 @@
 		"prefix": "AutoCloseWindow(true)"
 	},
 	"BGFont()": {
-		"body": "BGFont(${1});",
+		"body": "BGFont($1);",
 		"prefix": "BGFont()"
 	},
 	"BGGradient()": {
-		"body": "BGGradient(${1});",
+		"body": "BGGradient($1);",
 		"prefix": "BGGradient()"
 	},
 	"BrandingText()": {
-		"body": "BrandingText(${1});",
+		"body": "BrandingText($1);",
 		"prefix": "BrandingText()"
 	},
 	"BringToFront()": {
-		"body": "BringToFront(${1});",
+		"body": "BringToFront($1);",
 		"prefix": "BringToFront()"
 	},
 	"CRCCheck()": {
-		"body": "CRCCheck(${1});",
+		"body": "CRCCheck($1);",
 		"prefix": "CRCCheck()"
 	},
 	"Call()": {
-		"body": "Call(${1});",
+		"body": "Call($1);",
 		"prefix": "Call()"
 	},
 	"CallInstDLL()": {
-		"body": "CallInstDLL(${1});",
+		"body": "CallInstDLL($1);",
 		"prefix": "CallInstDLL()"
 	},
 	"Caption()": {
@@ -108,375 +108,375 @@
 		"prefix": "Caption()"
 	},
 	"ChangeUI()": {
-		"body": "ChangeUI(${1});",
+		"body": "ChangeUI($1);",
 		"prefix": "ChangeUI()"
 	},
 	"CheckBitmap()": {
-		"body": "CheckBitmap(${1});",
+		"body": "CheckBitmap($1);",
 		"prefix": "CheckBitmap()"
 	},
 	"ClearErrors()": {
-		"body": "ClearErrors(${1});",
+		"body": "ClearErrors($1);",
 		"prefix": "ClearErrors()"
 	},
 	"CompletedText()": {
-		"body": "CompletedText(${1});",
+		"body": "CompletedText($1);",
 		"prefix": "CompletedText()"
 	},
 	"ComponentText()": {
-		"body": "ComponentText(${1});",
+		"body": "ComponentText($1);",
 		"prefix": "ComponentText()"
 	},
 	"CopyFiles()": {
-		"body": "CopyFiles(${1});",
+		"body": "CopyFiles($1);",
 		"prefix": "CopyFiles()"
 	},
 	"CreateDirectory()": {
-		"body": "CreateDirectory(${1});",
+		"body": "CreateDirectory($1);",
 		"prefix": "CreateDirectory()"
 	},
 	"CreateFont()": {
-		"body": "CreateFont(${1});",
+		"body": "CreateFont($1);",
 		"prefix": "CreateFont()"
 	},
 	"CreateShortCut()": {
-		"body": "CreateShortCut(${1});",
+		"body": "CreateShortCut($1);",
 		"prefix": "CreateShortCut()"
 	},
 	"Delete()": {
-		"body": "Delete(${1});",
+		"body": "Delete($1);",
 		"prefix": "Delete()"
 	},
 	"DeleteINISec()": {
-		"body": "DeleteINISec(${1});",
+		"body": "DeleteINISec($1);",
 		"prefix": "DeleteINISec()"
 	},
 	"DeleteINIStr()": {
-		"body": "DeleteINIStr(${1});",
+		"body": "DeleteINIStr($1);",
 		"prefix": "DeleteINIStr()"
 	},
 	"DeleteRegKey()": {
-		"body": "DeleteRegKey(${1});",
+		"body": "DeleteRegKey($1);",
 		"prefix": "DeleteRegKey()"
 	},
 	"DeleteRegValue()": {
-		"body": "DeleteRegValue(${1});",
+		"body": "DeleteRegValue($1);",
 		"prefix": "DeleteRegValue()"
 	},
 	"DetailPrint()": {
-		"body": "DetailPrint(${1});",
+		"body": "DetailPrint($1);",
 		"prefix": "DetailPrint()"
 	},
 	"DetailsButtonText()": {
-		"body": "DetailsButtonText(${1});",
+		"body": "DetailsButtonText($1);",
 		"prefix": "DetailsButtonText()"
 	},
 	"DirText()": {
-		"body": "DirText(${1});",
+		"body": "DirText($1);",
 		"prefix": "DirText()"
 	},
 	"DirVar()": {
-		"body": "DirVar(${1});",
+		"body": "DirVar($1);",
 		"prefix": "DirVar()"
 	},
 	"DirVerify()": {
-		"body": "DirVerify(${1});",
+		"body": "DirVerify($1);",
 		"prefix": "DirVerify()"
 	},
 	"EnableWindow()": {
-		"body": "EnableWindow(${1});",
+		"body": "EnableWindow($1);",
 		"prefix": "EnableWindow()"
 	},
 	"EnumRegKey()": {
-		"body": "EnumRegKey(${1});",
+		"body": "EnumRegKey($1);",
 		"prefix": "EnumRegKey()"
 	},
 	"EnumRegValue()": {
-		"body": "EnumRegValue(${1});",
+		"body": "EnumRegValue($1);",
 		"prefix": "EnumRegValue()"
 	},
 	"Exch()": {
-		"body": "Exch(${1});",
+		"body": "Exch($1);",
 		"prefix": "Exch()"
 	},
 	"Exec()": {
-		"body": "Exec(${1});",
+		"body": "Exec($1);",
 		"prefix": "Exec()"
 	},
 	"ExecShell()": {
-		"body": "ExecShell(${1});",
+		"body": "ExecShell($1);",
 		"prefix": "ExecShell()"
 	},
 	"ExecShellWait()": {
-		"body": "ExecShellWait(${1});",
+		"body": "ExecShellWait($1);",
 		"prefix": "ExecShellWait()"
 	},
 	"ExecWait()": {
-		"body": "ExecWait(${1});",
+		"body": "ExecWait($1);",
 		"prefix": "ExecWait()"
 	},
 	"ExpandEnvStrings()": {
-		"body": "ExpandEnvStrings(${1});",
+		"body": "ExpandEnvStrings($1);",
 		"prefix": "ExpandEnvStrings()"
 	},
 	"File()": {
-		"body": "File(${1});",
+		"body": "File($1);",
 		"prefix": "File()"
 	},
 	"FileBufSize()": {
-		"body": "FileBufSize(${1});",
+		"body": "FileBufSize($1);",
 		"prefix": "FileBufSize()"
 	},
 	"FileClose()": {
-		"body": "FileClose(${1});",
+		"body": "FileClose($1);",
 		"prefix": "FileClose()"
 	},
 	"FileErrorText()": {
-		"body": "FileErrorText(${1});",
+		"body": "FileErrorText($1);",
 		"prefix": "FileErrorText()"
 	},
 	"FileOpen()": {
-		"body": "FileOpen(${1});",
+		"body": "FileOpen($1);",
 		"prefix": "FileOpen()"
 	},
 	"FileRead()": {
-		"body": "FileRead(${1});",
+		"body": "FileRead($1);",
 		"prefix": "FileRead()"
 	},
 	"FileReadByte()": {
-		"body": "FileReadByte(${1});",
+		"body": "FileReadByte($1);",
 		"prefix": "FileReadByte()"
 	},
 	"FileReadUTF16LE()": {
-		"body": "FileReadUTF16LE(${1});",
+		"body": "FileReadUTF16LE($1);",
 		"prefix": "FileReadUTF16LE()"
 	},
 	"FileReadWord()": {
-		"body": "FileReadWord(${1});",
+		"body": "FileReadWord($1);",
 		"prefix": "FileReadWord()"
 	},
 	"FileRecursive()": {
-		"body": "FileRecursive(${1});",
+		"body": "FileRecursive($1);",
 		"prefix": "FileRecursive()"
 	},
 	"FileSeek()": {
-		"body": "FileSeek(${1});",
+		"body": "FileSeek($1);",
 		"prefix": "FileSeek()"
 	},
 	"FileWrite()": {
-		"body": "FileWrite(${1});",
+		"body": "FileWrite($1);",
 		"prefix": "FileWrite()"
 	},
 	"FileWriteByte()": {
-		"body": "FileWriteByte(${1});",
+		"body": "FileWriteByte($1);",
 		"prefix": "FileWriteByte()"
 	},
 	"FileWriteUTF16LE()": {
-		"body": "FileWriteUTF16LE(${1});",
+		"body": "FileWriteUTF16LE($1);",
 		"prefix": "FileWriteUTF16LE()"
 	},
 	"FileWriteWord()": {
-		"body": "FileWriteWord(${1});",
+		"body": "FileWriteWord($1);",
 		"prefix": "FileWriteWord()"
 	},
 	"FindClose()": {
-		"body": "FindClose(${1});",
+		"body": "FindClose($1);",
 		"prefix": "FindClose()"
 	},
 	"FindFirst()": {
-		"body": "FindFirst(${1});",
+		"body": "FindFirst($1);",
 		"prefix": "FindFirst()"
 	},
 	"FindNext()": {
-		"body": "FindNext(${1});",
+		"body": "FindNext($1);",
 		"prefix": "FindNext()"
 	},
 	"FindWindow()": {
-		"body": "FindWindow(${1});",
+		"body": "FindWindow($1);",
 		"prefix": "FindWindow()"
 	},
 	"FlushINI()": {
-		"body": "FlushINI(${1});",
+		"body": "FlushINI($1);",
 		"prefix": "FlushINI()"
 	},
 	"GetCurInstType()": {
-		"body": "GetCurInstType(${1});",
+		"body": "GetCurInstType($1);",
 		"prefix": "GetCurInstType()"
 	},
 	"GetCurrentAddress()": {
-		"body": "GetCurrentAddress(${1});",
+		"body": "GetCurrentAddress($1);",
 		"prefix": "GetCurrentAddress()"
 	},
 	"GetDLLVersion()": {
-		"body": "GetDLLVersion(${1});",
+		"body": "GetDLLVersion($1);",
 		"prefix": "GetDLLVersion()"
 	},
 	"GetDLLVersionLocal()": {
-		"body": "GetDLLVersionLocal(${1});",
+		"body": "GetDLLVersionLocal($1);",
 		"prefix": "GetDLLVersionLocal()"
 	},
 	"GetDlgItem()": {
-		"body": "GetDlgItem(${1});",
+		"body": "GetDlgItem($1);",
 		"prefix": "GetDlgItem()"
 	},
 	"GetErrorLevel()": {
-		"body": "GetErrorLevel(${1});",
+		"body": "GetErrorLevel($1);",
 		"prefix": "GetErrorLevel()"
 	},
 	"GetFileTime()": {
-		"body": "GetFileTime(${1});",
+		"body": "GetFileTime($1);",
 		"prefix": "GetFileTime()"
 	},
 	"GetFileTimeLocal()": {
-		"body": "GetFileTimeLocal(${1});",
+		"body": "GetFileTimeLocal($1);",
 		"prefix": "GetFileTimeLocal()"
 	},
 	"GetFunctionAddress()": {
-		"body": "GetFunctionAddress(${1});",
+		"body": "GetFunctionAddress($1);",
 		"prefix": "GetFunctionAddress()"
 	},
 	"GetInstDirError()": {
-		"body": "GetInstDirError(${1});",
+		"body": "GetInstDirError($1);",
 		"prefix": "GetInstDirError()"
 	},
 	"GetKnownFolderPath()": {
-		"body": "GetKnownFolderPath(${1});",
+		"body": "GetKnownFolderPath($1);",
 		"prefix": "GetKnownFolderPath()"
 	},
 	"GetLabelAddress()": {
-		"body": "GetLabelAddress(${1});",
+		"body": "GetLabelAddress($1);",
 		"prefix": "GetLabelAddress()"
 	},
 	"GetRegView()": {
-		"body": "GetRegView(${1});",
+		"body": "GetRegView($1);",
 		"prefix": "GetRegView()"
 	},
 	"GetShellVarContext()": {
-		"body": "GetShellVarContext(${1});",
+		"body": "GetShellVarContext($1);",
 		"prefix": "GetShellVarContext()"
 	},
 	"GetTempFileName()": {
-		"body": "GetTempFileName(${1});",
+		"body": "GetTempFileName($1);",
 		"prefix": "GetTempFileName()"
 	},
 	"GetWinVer()": {
-		"body": "GetWinVer(${1});",
+		"body": "GetWinVer($1);",
 		"prefix": "GetWinVer()"
 	},
 	"HideWindow()": {
-		"body": "HideWindow(${1});",
+		"body": "HideWindow($1);",
 		"prefix": "HideWindow()"
 	},
 	"Icon()": {
-		"body": "Icon(${1});",
+		"body": "Icon($1);",
 		"prefix": "Icon()"
 	},
 	"IfAbort()": {
-		"body": "IfAbort(${1});",
+		"body": "IfAbort($1);",
 		"prefix": "IfAbort()"
 	},
 	"IfErrors()": {
-		"body": "IfErrors(${1});",
+		"body": "IfErrors($1);",
 		"prefix": "IfErrors()"
 	},
 	"IfFileExists()": {
-		"body": "IfFileExists(${1});",
+		"body": "IfFileExists($1);",
 		"prefix": "IfFileExists()"
 	},
 	"IfRebootFlag()": {
-		"body": "IfRebootFlag(${1});",
+		"body": "IfRebootFlag($1);",
 		"prefix": "IfRebootFlag()"
 	},
 	"IfSilent()": {
-		"body": "IfSilent(${1});",
+		"body": "IfSilent($1);",
 		"prefix": "IfSilent()"
 	},
 	"Include()": {
-		"body": "Include(${1});",
+		"body": "Include($1);",
 		"prefix": "Include()"
 	},
 	"InitPluginsDir()": {
-		"body": "InitPluginsDir(${1});",
+		"body": "InitPluginsDir($1);",
 		"prefix": "InitPluginsDir()"
 	},
 	"InstProgressFlags()": {
-		"body": "InstProgressFlags(${1});",
+		"body": "InstProgressFlags($1);",
 		"prefix": "InstProgressFlags()"
 	},
 	"InstType()": {
-		"body": "InstType(${1});",
+		"body": "InstType($1);",
 		"prefix": "InstType()"
 	},
 	"InstTypeGetText()": {
-		"body": "InstTypeGetText(${1});",
+		"body": "InstTypeGetText($1);",
 		"prefix": "InstTypeGetText()"
 	},
 	"InstTypeSetText()": {
-		"body": "InstTypeSetText(${1});",
+		"body": "InstTypeSetText($1);",
 		"prefix": "InstTypeSetText()"
 	},
 	"InstallButtonText()": {
-		"body": "InstallButtonText(${1});",
+		"body": "InstallButtonText($1);",
 		"prefix": "InstallButtonText()"
 	},
 	"InstallColors()": {
-		"body": "InstallColors(${1});",
+		"body": "InstallColors($1);",
 		"prefix": "InstallColors()"
 	},
 	"InstallDir()": {
-		"body": "InstallDir(${1});",
+		"body": "InstallDir($1);",
 		"prefix": "InstallDir()"
 	},
 	"InstallDirRegKey()": {
-		"body": "InstallDirRegKey(${1});",
+		"body": "InstallDirRegKey($1);",
 		"prefix": "InstallDirRegKey()"
 	},
 	"IntFmt()": {
-		"body": "IntFmt(${1});",
+		"body": "IntFmt($1);",
 		"prefix": "IntFmt()"
 	},
 	"IsWindow()": {
-		"body": "IsWindow(${1});",
+		"body": "IsWindow($1);",
 		"prefix": "IsWindow()"
 	},
 	"LangString()": {
-		"body": "LangString(${1});",
+		"body": "LangString($1);",
 		"prefix": "LangString()"
 	},
 	"LicenseBkColor()": {
-		"body": "LicenseBkColor(${1});",
+		"body": "LicenseBkColor($1);",
 		"prefix": "LicenseBkColor()"
 	},
 	"LicenseData()": {
-		"body": "LicenseData(${1});",
+		"body": "LicenseData($1);",
 		"prefix": "LicenseData()"
 	},
 	"LicenseForceSelection()": {
-		"body": "LicenseForceSelection(${1});",
+		"body": "LicenseForceSelection($1);",
 		"prefix": "LicenseForceSelection()"
 	},
 	"LicenseLangString()": {
-		"body": "LicenseLangString(${1});",
+		"body": "LicenseLangString($1);",
 		"prefix": "LicenseLangString()"
 	},
 	"LicenseText()": {
-		"body": "LicenseText(${1});",
+		"body": "LicenseText($1);",
 		"prefix": "LicenseText()"
 	},
 	"LoadLanguageFile()": {
-		"body": "LoadLanguageFile(${1});",
+		"body": "LoadLanguageFile($1);",
 		"prefix": "LoadLanguageFile()"
 	},
 	"LockWindow()": {
-		"body": "LockWindow(${1});",
+		"body": "LockWindow($1);",
 		"prefix": "LockWindow()"
 	},
 	"LogSet()": {
-		"body": "LogSet(${1});",
+		"body": "LogSet($1);",
 		"prefix": "LogSet()"
 	},
 	"LogText()": {
-		"body": "LogText(${1});",
+		"body": "LogText($1);",
 		"prefix": "LogText()"
 	},
 	"ManifestAppendCustomString()": {
@@ -484,7 +484,7 @@
 		"prefix": "ManifestAppendCustomString()"
 	},
 	"ManifestDisableWindowFiltering()": {
-		"body": "ManifestDisableWindowFiltering(${1});",
+		"body": "ManifestDisableWindowFiltering($1);",
 		"prefix": "ManifestDisableWindowFiltering()"
 	},
 	"ManifestDisableWindowFiltering(true)": {
@@ -492,7 +492,7 @@
 		"prefix": "ManifestDisableWindowFiltering(true)"
 	},
 	"ManifestDPIAware()": {
-		"body": "ManifestDPIAware(${1});",
+		"body": "ManifestDPIAware($1);",
 		"prefix": "ManifestDPIAware()"
 	},
 	"ManifestDPIAware(true)": {
@@ -504,7 +504,7 @@
 		"prefix": "ManifestDPIAware(false)"
 	},
 	"ManifestGdiScaling()": {
-		"body": "ManifestGdiScaling(${1});",
+		"body": "ManifestGdiScaling($1);",
 		"prefix": "ManifestGdiScaling()"
 	},
 	"ManifestGdiScaling(true)": {
@@ -512,7 +512,7 @@
 		"prefix": "ManifestGdiScaling(true)"
 	},
 	"ManifestLongPathAware()": {
-		"body": "ManifestLongPathAware(${1});",
+		"body": "ManifestLongPathAware($1);",
 		"prefix": "ManifestLongPathAware()"
 	},
 	"ManifestLongPathAware(true)": {
@@ -524,15 +524,15 @@
 		"prefix": "ManifestLongPathAware(false)"
 	},
 	"ManifestSupportedOS()": {
-		"body": "ManifestSupportedOS(${1});",
+		"body": "ManifestSupportedOS($1);",
 		"prefix": "ManifestSupportedOS()"
 	},
 	"MessageBox()": {
-		"body": "MessageBox(${1});",
+		"body": "MessageBox($1);",
 		"prefix": "MessageBox()"
 	},
 	"MiscButtonText()": {
-		"body": "MiscButtonText(${1});",
+		"body": "MiscButtonText($1);",
 		"prefix": "MiscButtonText()"
 	},
 	"Name()": {
@@ -544,55 +544,55 @@
 		"prefix": "OutFile()"
 	},
 	"Pop()": {
-		"body": "Pop(${1});",
+		"body": "Pop($1);",
 		"prefix": "Pop()"
 	},
 	"Push()": {
-		"body": "Push(${1});",
+		"body": "Push($1);",
 		"prefix": "Push()"
 	},
 	"Quit()": {
-		"body": "Quit(${1});",
+		"body": "Quit($1);",
 		"prefix": "Quit()"
 	},
 	"RMDir()": {
-		"body": "RMDir(${1});",
+		"body": "RMDir($1);",
 		"prefix": "RMDir()"
 	},
 	"RMDirRecursive()": {
-		"body": "RMDirRecursive(${1});",
+		"body": "RMDirRecursive($1);",
 		"prefix": "RMDirRecursive()"
 	},
 	"ReadEnvStr()": {
-		"body": "ReadEnvStr(${1});",
+		"body": "ReadEnvStr($1);",
 		"prefix": "ReadEnvStr()"
 	},
 	"ReadINIStr()": {
-		"body": "ReadINIStr(${1});",
+		"body": "ReadINIStr($1);",
 		"prefix": "ReadINIStr()"
 	},
 	"ReadRegDWORD()": {
-		"body": "ReadRegDWORD(${1});",
+		"body": "ReadRegDWORD($1);",
 		"prefix": "ReadRegDWORD()"
 	},
 	"ReadRegStr()": {
-		"body": "ReadRegStr(${1});",
+		"body": "ReadRegStr($1);",
 		"prefix": "ReadRegStr()"
 	},
 	"Reboot()": {
-		"body": "Reboot(${1});",
+		"body": "Reboot($1);",
 		"prefix": "Reboot()"
 	},
 	"RegDLL()": {
-		"body": "RegDLL(${1});",
+		"body": "RegDLL($1);",
 		"prefix": "RegDLL()"
 	},
 	"Rename()": {
-		"body": "Rename(${1});",
+		"body": "Rename($1);",
 		"prefix": "Rename()"
 	},
 	"RequestExecutionLevel()": {
-		"body": "RequestExecutionLevel(${1});",
+		"body": "RequestExecutionLevel($1);",
 		"prefix": "RequestExecutionLevel()"
 	},
 	"RequestExecutionLevel(admin)": {
@@ -612,59 +612,59 @@
 		"prefix": "RequestExecutionLevel(user)"
 	},
 	"ReserveFile()": {
-		"body": "ReserveFile(${1});",
+		"body": "ReserveFile($1);",
 		"prefix": "ReserveFile()"
 	},
 	"ReserveFileRecursive()": {
-		"body": "ReserveFileRecursive(${1});",
+		"body": "ReserveFileRecursive($1);",
 		"prefix": "ReserveFileRecursive()"
 	},
 	"SearchPath()": {
-		"body": "SearchPath(${1});",
+		"body": "SearchPath($1);",
 		"prefix": "SearchPath()"
 	},
 	"SectionGetFlags()": {
-		"body": "SectionGetFlags(${1});",
+		"body": "SectionGetFlags($1);",
 		"prefix": "SectionGetFlags()"
 	},
 	"SectionGetInstTypes()": {
-		"body": "SectionGetInstTypes(${1});",
+		"body": "SectionGetInstTypes($1);",
 		"prefix": "SectionGetInstTypes()"
 	},
 	"SectionGetSize()": {
-		"body": "SectionGetSize(${1});",
+		"body": "SectionGetSize($1);",
 		"prefix": "SectionGetSize()"
 	},
 	"SectionGetText()": {
-		"body": "SectionGetText(${1});",
+		"body": "SectionGetText($1);",
 		"prefix": "SectionGetText()"
 	},
 	"SectionIn()": {
-		"body": "SectionIn(${1});",
+		"body": "SectionIn($1);",
 		"prefix": "SectionIn()"
 	},
 	"SectionSetFlags()": {
-		"body": "SectionSetFlags(${1});",
+		"body": "SectionSetFlags($1);",
 		"prefix": "SectionSetFlags()"
 	},
 	"SectionSetInstTypes()": {
-		"body": "SectionSetInstTypes(${1});",
+		"body": "SectionSetInstTypes($1);",
 		"prefix": "SectionSetInstTypes()"
 	},
 	"SectionSetSize()": {
-		"body": "SectionSetSize(${1});",
+		"body": "SectionSetSize($1);",
 		"prefix": "SectionSetSize()"
 	},
 	"SectionSetText()": {
-		"body": "SectionSetText(${1});",
+		"body": "SectionSetText($1);",
 		"prefix": "SectionSetText()"
 	},
 	"SendMessage()": {
-		"body": "SendMessage(${1});",
+		"body": "SendMessage($1);",
 		"prefix": "SendMessage()"
 	},
 	"SetAutoClose()": {
-		"body": "SetAutoClose(${1});",
+		"body": "SetAutoClose($1);",
 		"prefix": "SetAutoClose()"
 	},
 	"SetAutoClose(false)": {
@@ -676,11 +676,11 @@
 		"prefix": "SetAutoClose(true)"
 	},
 	"SetBrandingImage()": {
-		"body": "SetBrandingImage(${1});",
+		"body": "SetBrandingImage($1);",
 		"prefix": "SetBrandingImage()"
 	},
 	"SetCompress()": {
-		"body": "SetCompress(${1});",
+		"body": "SetCompress($1);",
 		"prefix": "SetCompress()"
 	},
 	"SetCompress(auto)": {
@@ -696,11 +696,11 @@
 		"prefix": "SetCompress(off)"
 	},
 	"SetCompressionLevel()": {
-		"body": "SetCompressionLevel(${1});",
+		"body": "SetCompressionLevel($1);",
 		"prefix": "SetCompressionLevel()"
 	},
 	"SetCompressor()": {
-		"body": "SetCompressor(${1});",
+		"body": "SetCompressor($1);",
 		"prefix": "SetCompressor()"
 	},
 	"SetCompressorDictSize()": {
@@ -708,15 +708,15 @@
 		"prefix": "SetCompressorDictSize()"
 	},
 	"SetCtlColors()": {
-		"body": "SetCtlColors(${1});",
+		"body": "SetCtlColors($1);",
 		"prefix": "SetCtlColors()"
 	},
 	"SetCurInstType()": {
-		"body": "SetCurInstType(${1});",
+		"body": "SetCurInstType($1);",
 		"prefix": "SetCurInstType()"
 	},
 	"SetDatablockOptimize()": {
-		"body": "SetDatablockOptimize(${1});",
+		"body": "SetDatablockOptimize($1);",
 		"prefix": "SetDatablockOptimize()"
 	},
 	"SetDatablockOptimize(off)": {
@@ -728,7 +728,7 @@
 		"prefix": "SetDatablockOptimize(on)"
 	},
 	"SetDateSave()": {
-		"body": "SetDateSave(${1});",
+		"body": "SetDateSave($1);",
 		"prefix": "SetDateSave()"
 	},
 	"SetDateSave(off)": {
@@ -740,7 +740,7 @@
 		"prefix": "SetDateSave(on)"
 	},
 	"SetDetailsPrint()": {
-		"body": "SetDetailsPrint(${1});",
+		"body": "SetDetailsPrint($1);",
 		"prefix": "SetDetailsPrint()"
 	},
 	"SetDetailsPrint(both)": {
@@ -764,7 +764,7 @@
 		"prefix": "SetDetailsPrint(textonly)"
 	},
 	"SetDetailsView()": {
-		"body": "SetDetailsView(${1});",
+		"body": "SetDetailsView($1);",
 		"prefix": "SetDetailsView()"
 	},
 	"SetDetailsView(hide)": {
@@ -780,23 +780,23 @@
 		"prefix": "SetErrorLevel()"
 	},
 	"SetErrors()": {
-		"body": "SetErrors(${1});",
+		"body": "SetErrors($1);",
 		"prefix": "SetErrors()"
 	},
 	"SetFileAttributes()": {
-		"body": "SetFileAttributes(${1});",
+		"body": "SetFileAttributes($1);",
 		"prefix": "SetFileAttributes()"
 	},
 	"SetFont()": {
-		"body": "SetFont(${1});",
+		"body": "SetFont($1);",
 		"prefix": "SetFont()"
 	},
 	"SetOutPath()": {
-		"body": "SetOutPath(${1});",
+		"body": "SetOutPath($1);",
 		"prefix": "SetOutPath()"
 	},
 	"SetOverwrite()": {
-		"body": "SetOverwrite(${1});",
+		"body": "SetOverwrite($1);",
 		"prefix": "SetOverwrite()"
 	},
 	"SetOverwrite(ifdiff)": {
@@ -820,7 +820,7 @@
 		"prefix": "SetOverwrite(try)"
 	},
 	"SetRebootFlag()": {
-		"body": "SetRebootFlag(${1});",
+		"body": "SetRebootFlag($1);",
 		"prefix": "SetRebootFlag()"
 	},
 	"SetRebootFlag(false)": {
@@ -832,7 +832,7 @@
 		"prefix": "SetRebootFlag(true)"
 	},
 	"SetRegView()": {
-		"body": "SetRegView(${1});",
+		"body": "SetRegView($1);",
 		"prefix": "SetRegView()"
 	},
 	"SetRegView(32)": {
@@ -848,7 +848,7 @@
 		"prefix": "SetRegView(lastused)"
 	},
 	"SetShellVarContext()": {
-		"body": "SetShellVarContext(${1});",
+		"body": "SetShellVarContext($1);",
 		"prefix": "SetShellVarContext()"
 	},
 	"SetShellVarContext(all)": {
@@ -860,7 +860,7 @@
 		"prefix": "SetShellVarContext(current)"
 	},
 	"SetSilent()": {
-		"body": "SetSilent(${1});",
+		"body": "SetSilent($1);",
 		"prefix": "SetSilent()"
 	},
 	"SetSilent(normal)": {
@@ -872,7 +872,7 @@
 		"prefix": "SetSilent(silent)"
 	},
 	"ShowInstDetails()": {
-		"body": "ShowInstDetails(${1});",
+		"body": "ShowInstDetails($1);",
 		"prefix": "ShowInstDetails()"
 	},
 	"ShowInstDetails(hide)": {
@@ -888,7 +888,7 @@
 		"prefix": "ShowInstDetails(show)"
 	},
 	"ShowUninstDetails()": {
-		"body": "ShowUninstDetails(${1});",
+		"body": "ShowUninstDetails($1);",
 		"prefix": "ShowUninstDetails()"
 	},
 	"ShowUninstDetails(hide)": {
@@ -904,11 +904,11 @@
 		"prefix": "ShowUninstDetails(show)"
 	},
 	"ShowWindow()": {
-		"body": "ShowWindow(${1});",
+		"body": "ShowWindow($1);",
 		"prefix": "ShowWindow()"
 	},
 	"SilentInstall()": {
-		"body": "SilentInstall(${1});",
+		"body": "SilentInstall($1);",
 		"prefix": "SilentInstall()"
 	},
 	"SilentInstall(normal)": {
@@ -924,7 +924,7 @@
 		"prefix": "SilentInstall(silentlog)"
 	},
 	"SilentUninstall()": {
-		"body": "SilentUninstall(${1});",
+		"body": "SilentUninstall($1);",
 		"prefix": "SilentUninstall()"
 	},
 	"SilentUninstall(normal)": {
@@ -940,31 +940,31 @@
 		"prefix": "Sleep()"
 	},
 	"SpaceTexts()": {
-		"body": "SpaceTexts(${1});",
+		"body": "SpaceTexts($1);",
 		"prefix": "SpaceTexts()"
 	},
 	"StrCmp()": {
-		"body": "StrCmp(${1});",
+		"body": "StrCmp($1);",
 		"prefix": "StrCmp()"
 	},
 	"StrCmpS()": {
-		"body": "StrCmpS(${1});",
+		"body": "StrCmpS($1);",
 		"prefix": "StrCmpS()"
 	},
 	"StrCpy()": {
-		"body": "StrCpy(${1});",
+		"body": "StrCpy($1);",
 		"prefix": "StrCpy()"
 	},
 	"StrLen()": {
-		"body": "StrLen(${1});",
+		"body": "StrLen($1);",
 		"prefix": "StrLen()"
 	},
 	"SubCaption()": {
-		"body": "SubCaption(${1});",
+		"body": "SubCaption($1);",
 		"prefix": "SubCaption()"
 	},
 	"Target()": {
-		"body": "Target(\"${1}\");",
+		"body": "Target(\"$1\");",
 		"prefix": "Target()"
 	},
 	"Target(amd64-unicode)": {
@@ -980,7 +980,7 @@
 		"prefix": "Target(x86-unicode)"
 	},
 	"Unicode()": {
-		"body": "Unicode(${1});",
+		"body": "Unicode($1);",
 		"prefix": "Unicode()"
 	},
 	"Unicode(true)": {
@@ -1000,11 +1000,11 @@
 		"prefix": "UninstallCaption()"
 	},
 	"UninstallIcon()": {
-		"body": "UninstallIcon(${1});",
+		"body": "UninstallIcon($1);",
 		"prefix": "UninstallIcon()"
 	},
 	"UninstallSubCaption()": {
-		"body": "UninstallSubCaption(${1});",
+		"body": "UninstallSubCaption($1);",
 		"prefix": "UninstallSubCaption()"
 	},
 	"UninstallText()": {
@@ -1012,19 +1012,19 @@
 		"prefix": "UninstallText()"
 	},
 	"UnRegDLL()": {
-		"body": "UnRegDLL(${1});",
+		"body": "UnRegDLL($1);",
 		"prefix": "UnRegDLL()"
 	},
 	"VIAddVersionKey()": {
-		"body": "VIAddVersionKey(${1});",
+		"body": "VIAddVersionKey($1);",
 		"prefix": "VIAddVersionKey()"
 	},
 	"VIProductVersion()": {
-		"body": "VIProductVersion(${1});",
+		"body": "VIProductVersion($1);",
 		"prefix": "VIProductVersion()"
 	},
 	"WindowIcon()": {
-		"body": "WindowIcon(${1});",
+		"body": "WindowIcon($1);",
 		"prefix": "WindowIcon()"
 	},
 	"WindowIcon(off)": {
@@ -1036,39 +1036,39 @@
 		"prefix": "WindowIcon(on)"
 	},
 	"WriteINIStr()": {
-		"body": "WriteINIStr(${1});",
+		"body": "WriteINIStr($1);",
 		"prefix": "WriteINIStr()"
 	},
 	"WriteRegBin()": {
-		"body": "WriteRegBin(${1});",
+		"body": "WriteRegBin($1);",
 		"prefix": "WriteRegBin()"
 	},
 	"WriteRegDWORD()": {
-		"body": "WriteRegDWORD(${1});",
+		"body": "WriteRegDWORD($1);",
 		"prefix": "WriteRegDWORD()"
 	},
 	"WriteRegExpandStr()": {
-		"body": "WriteRegExpandStr(${1});",
+		"body": "WriteRegExpandStr($1);",
 		"prefix": "WriteRegExpandStr()"
 	},
 	"WriteRegNone()": {
-		"body": "WriteRegNone(${1});",
+		"body": "WriteRegNone($1);",
 		"prefix": "WriteRegNone()"
 	},
 	"WriteRegMultiStr()": {
-		"body": "WriteRegMultiStr(${1});",
+		"body": "WriteRegMultiStr($1);",
 		"prefix": "WriteRegMultiStr()"
 	},
 	"WriteRegStr()": {
-		"body": "WriteRegStr(${1});",
+		"body": "WriteRegStr($1);",
 		"prefix": "WriteRegStr()"
 	},
 	"WriteUninstaller()": {
-		"body": "WriteUninstaller(${1});",
+		"body": "WriteUninstaller($1);",
 		"prefix": "WriteUninstaller()"
 	},
 	"XPStyle()": {
-		"body": "XPStyle(${1});",
+		"body": "XPStyle($1);",
 		"prefix": "XPStyle()"
 	},
 	"XPStyle(off)": {
@@ -1088,7 +1088,7 @@
 		"prefix": "for()"
 	},
 	"function()": {
-		"body": "function ${1:function_name}(${2}) {\n\t${3:// your code here}\n}",
+		"body": "function ${1:function_name}($2) {\n\t${3:// your code here}\n}",
 		"prefix": "function()"
 	},
 	"if()": {
@@ -1108,43 +1108,43 @@
 		"prefix": "if()..else if()..else"
 	},
 	"onGUIEnd()": {
-		"body": "function .onGUIEnd(${1}) {\n\t${2:// your code here}\n}",
+		"body": "function .onGUIEnd($1) {\n\t${2:// your code here}\n}",
 		"prefix": "onGUIEnd()"
 	},
 	"onGUIInit()": {
-		"body": "function .onGUIInit(${1}) {\n\t${2:// your code here}\n}",
+		"body": "function .onGUIInit($1) {\n\t${2:// your code here}\n}",
 		"prefix": "onGUIInit()"
 	},
 	"onInit()": {
-		"body": "function .onInit(${1}) {\n\t${2:// your code here}\n}",
+		"body": "function .onInit($1) {\n\t${2:// your code here}\n}",
 		"prefix": "onInit()"
 	},
 	"onInstFailed()": {
-		"body": "function .onInstFailed(${1}) {\n\t${2:// your code here}\n}",
+		"body": "function .onInstFailed($1) {\n\t${2:// your code here}\n}",
 		"prefix": "onInstFailed()"
 	},
 	"onInstSuccess()": {
-		"body": "function .onInstSuccess(${1}) {\n\t${2:// your code here}\n}",
+		"body": "function .onInstSuccess($1) {\n\t${2:// your code here}\n}",
 		"prefix": "onInstSuccess()"
 	},
 	"onMouseOverSection()": {
-		"body": "function .onMouseOverSection(${1}) {\n\t${2:// your code here}\n}",
+		"body": "function .onMouseOverSection($1) {\n\t${2:// your code here}\n}",
 		"prefix": "onMouseOverSection()"
 	},
 	"onRebootFailed()": {
-		"body": "function .onRebootFailed(${1}) {\n\t${2:// your code here}\n}",
+		"body": "function .onRebootFailed($1) {\n\t${2:// your code here}\n}",
 		"prefix": "onRebootFailed()"
 	},
 	"onSelChange()": {
-		"body": "function .onSelChange(${1}) {\n\t${2:// your code here}\n}",
+		"body": "function .onSelChange($1) {\n\t${2:// your code here}\n}",
 		"prefix": "onSelChange()"
 	},
 	"onUserAbort()": {
-		"body": "function .onUserAbort(${1}) {\n\t${2:// your code here}\n}",
+		"body": "function .onUserAbort($1) {\n\t${2:// your code here}\n}",
 		"prefix": "onUserAbort()"
 	},
 	"onVerifyInstDir()": {
-		"body": "function .onVerifyInstDir(${1}) {\n\t${2:// your code here}\n}",
+		"body": "function .onVerifyInstDir($1) {\n\t${2:// your code here}\n}",
 		"prefix": "onVerifyInstDir()"
 	},
 	"page Components()": {
@@ -1172,7 +1172,7 @@
 		"prefix": "page()"
 	},
 	"section()": {
-		"body": "section ${1:section_index}(\"${2:section_name}\"${3}) {\n\t${4:// your code here}\n}",
+		"body": "section ${1:section_index}(\"${2:section_name}\"$3) {\n\t${4:// your code here}\n}",
 		"prefix": "section()"
 	},
 	"switch()": {
@@ -1200,35 +1200,35 @@
 		"prefix": "switch():5"
 	},
 	"un.onGUIEnd()": {
-		"body": "function un.onGUIEnd(${1}) {\n\t${2:// your code here}\n}",
+		"body": "function un.onGUIEnd($1) {\n\t${2:// your code here}\n}",
 		"prefix": "un.onGUIEnd()"
 	},
 	"un.onGUIInit()": {
-		"body": "function un.onGUIInit(${1}) {\n\t${2:// your code here}\n}",
+		"body": "function un.onGUIInit($1) {\n\t${2:// your code here}\n}",
 		"prefix": "un.onGUIInit()"
 	},
 	"un.onInit()": {
-		"body": "function un.onInit(${1}) {\n\t${2:// your code here}\n}",
+		"body": "function un.onInit($1) {\n\t${2:// your code here}\n}",
 		"prefix": "un.onInit()"
 	},
 	"un.onRebootFailed()": {
-		"body": "function un.onRebootFailed(${1}) {\n\t${2:// your code here}\n}",
+		"body": "function un.onRebootFailed($1) {\n\t${2:// your code here}\n}",
 		"prefix": "un.onRebootFailed()"
 	},
 	"un.onSelChange()": {
-		"body": "function un.onSelChange(${1}) {\n\t${2:// your code here}\n}",
+		"body": "function un.onSelChange($1) {\n\t${2:// your code here}\n}",
 		"prefix": "un.onSelChange()"
 	},
 	"un.onUninstFailed()": {
-		"body": "function un.onUninstFailed(${1}) {\n\t${2:// your code here}\n}",
+		"body": "function un.onUninstFailed($1) {\n\t${2:// your code here}\n}",
 		"prefix": "un.onUninstFailed()"
 	},
 	"un.onUninstSuccess()": {
-		"body": "function un.onUninstSuccess(${1}) {\n\t${2:// your code here}\n}",
+		"body": "function un.onUninstSuccess($1) {\n\t${2:// your code here}\n}",
 		"prefix": "un.onUninstSuccess()"
 	},
 	"un.onUserAbort()": {
-		"body": "function un.onUserAbort(${1}) {\n\t${2:// your code here}\n}",
+		"body": "function un.onUserAbort($1) {\n\t${2:// your code here}\n}",
 		"prefix": "un.onUserAbort()"
 	},
 	"uninstall page Components()": {

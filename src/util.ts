@@ -23,6 +23,11 @@ export async function onSuccess(choice: string): Promise<void> {
 	if (choice === 'Open') {
 		const nsisFile = document.fileName.replace(/\.nsl$/, '.nsi');
 
+		if (!(await fileExists(nsisFile))) {
+			window.showErrorMessage(`Transpiled file does not exist: "${nsisFile}"`);
+			return;
+		}
+
 		try {
 			const doc = await workspace.openTextDocument(nsisFile);
 			await window.showTextDocument(doc);

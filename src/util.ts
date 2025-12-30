@@ -28,8 +28,13 @@ export async function onSuccess(choice: string): Promise<void> {
 		const outName = `${baseName}.nsi`;
 		const nsisFile = join(dirName, outName);
 
-		const doc = await workspace.openTextDocument(nsisFile);
-		await window.showTextDocument(doc);
+		try {
+			const doc = await workspace.openTextDocument(nsisFile);
+			await window.showTextDocument(doc);
+		} catch (error) {
+			window.showErrorMessage(`Failed to open transpiled file: ${nsisFile}`);
+			console.error('Error opening transpiled file:', error);
+		}
 	}
 }
 

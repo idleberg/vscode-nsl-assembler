@@ -1,7 +1,7 @@
-import { clearOutput, onSuccess, validateConfig } from './util';
-import { getConfig } from 'vscode-get-config';
-import { spawn } from 'child_process';
+import { spawn } from 'node:child_process';
 import { window } from 'vscode';
+import { getConfig } from 'vscode-get-config';
+import { clearOutput, fileExists, onSuccess } from './util.ts';
 
 const nslChannel = window.createOutputChannel('nsL Assembler');
 
@@ -10,62 +10,92 @@ const nslChannel = window.createOutputChannel('nsL Assembler');
  *  https://sourceforge.net/projects/nslassembler/
  *  https://github.com/NSIS-Dev/nsl-assembler
  */
-async function transpile(): Promise<void> {
-  await clearOutput(nslChannel);
+export async function transpile(): Promise<void> {
+	await clearOutput(nslChannel);
 
-  // TODO Breaking change in VSCode 1.54, remove in future
-  const languageID = window.activeTextEditor['_documentData']
-    ? window.activeTextEditor['_documentData']['_languageId']
-    : window.activeTextEditor['document']['languageId'];
+	if (!window.activeTextEditor) {
+		window.showErrorMessage('No active editor found');
+		return;
+	}
 
-  if (languageID !== 'nsl-assembler') {
-    nslChannel.appendLine('This command is only available for nsL Assembler files');
-    return;
-  }
+	const editor = window.activeTextEditor;
 
-  const { customArguments, pathToJar, showNotifications } = getConfig('nsl-assembler');
-  const document = window.activeTextEditor.document;
+	if (editor.document.languageId !== 'nsl-assembler') {
+		nslChannel.appendLine('This command is only available for nsL Assembler files');
+		return;
+	}
 
-  if (customArguments?.length) {
-    validateConfig(customArguments);
-  }
+	const { customArguments, pathToJar } = getConfig('nsl-assembler');
+	const document = window.activeTextEditor.document;
 
-  document.save().then( () => {
-    const nslJar = pathToJar;
+	await document.save();
 
-    if (typeof nslJar === 'undefined' || nslJar === null) {
-      return window.showErrorMessage('No valid `nsL.jar` was specified in your config');
-    }
+	if (typeof pathToJar !== 'string' || pathToJar.length === 0) {
+		window.showErrorMessage('No valid `nsL.jar` was specified in your config');
+		return;
+	}
 
-    const defaultArguments: Array<string> = ['-jar', nslJar];
-    const compilerArguments = [ ...defaultArguments, ...customArguments, document.fileName ];
+	if (!(await fileExists(pathToJar))) {
+		window.showErrorMessage('The specified `nsL.jar` does not exist');
+		return;
+	}
 
-    // Let's build
-    const nslCmd = spawn('java', compilerArguments);
-    const stdErr = [];
+	const defaultArguments: Array<string> = ['-jar', pathToJar];
+	const compilerArguments = [...defaultArguments, ...(customArguments ?? []), document.fileName];
 
-    nslCmd.stdout.on('data', (line: Array<unknown>) => {
-      nslChannel.appendLine(line.toString());
-    });
+	// Let's build
+	const nslCmd = spawn('java', compilerArguments);
+	const stdErr: Array<string> = [];
 
-    nslCmd.stderr.on('data', (line: Array<unknown>) => {
-      stdErr.push(line);
-      nslChannel.appendLine(line.toString());
-    });
+	nslCmd.stdout.on('data', (line: Array<Buffer>) => {
+		const lineString: string = line.toString().trim();
 
-    nslCmd.on('exit', () => {
-      if (stdErr.length === 0) {
-        if (showNotifications) {
-          window.showInformationMessage(`Transpiled successfully -- ${document.fileName}`, 'Open')
-          .then(onSuccess);
-        }
-      } else {
-        nslChannel.show(true);
-        if (showNotifications) window.showErrorMessage('Transpile failed, see output for details');
-        if (stdErr.length > 0) console.error(stdErr.join('\n'));
-      }
-    });
-  });
+		nslChannel.appendLine(lineString);
+	});
+
+	nslCmd.stderr.on('data', (line: Array<Buffer>) => {
+		const lineString: string = line.toString().trim();
+
+		stdErr.push(lineString);
+		nslChannel.appendLine(lineString);
+	});
+
+	await new Promise<void>((resolve) => {
+		nslCmd.on('error', (error) => {
+			nslChannel.show(true);
+			nslChannel.appendLine(`Failed to spawn Java process: ${error.message}`);
+			window.showErrorMessage(
+				'Failed to start Java process. Please ensure Java is installed and accessible in your PATH.',
+			);
+			resolve();
+		});
+
+		nslCmd.on('exit', async (code) => {
+			if (stdErr.length > 0 || (code !== null && code !== 0)) {
+				handleTranspileError(stdErr, code);
+			} else {
+				await handleTranspileSuccess(document.fileName);
+			}
+			resolve();
+		});
+	});
 }
 
-export { transpile };
+function handleTranspileError(stdErr: string[], code: number | null): void {
+	nslChannel.show(true);
+
+	if (code !== null && code !== 0 && stdErr.length === 0) {
+		nslChannel.appendLine(`Process exited with code ${code}`);
+	}
+
+	window.showErrorMessage('Transpile failed, see output for details');
+	console.error(stdErr.join('\n'));
+}
+
+async function handleTranspileSuccess(fileName: string): Promise<void> {
+	const choice = await window.showInformationMessage(`Transpiled successfully -- ${fileName}`, 'Open');
+
+	if (choice) {
+		await onSuccess(choice);
+	}
+}

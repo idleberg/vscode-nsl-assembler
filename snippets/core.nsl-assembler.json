@@ -91,9 +91,17 @@
 		"body": "BringToFront($1);",
 		"prefix": "BringToFront()"
 	},
-	"CRCCheck()": {
-		"body": "CRCCheck($1);",
-		"prefix": "CRCCheck()"
+	"CPU()": {
+		"body": "CPU($1);",
+		"prefix": "CPU()"
+	},
+	"CPU(x86)": {
+		"body": "CPU(x86);",
+		"prefix": "CPU(x68)"
+	},
+	"CRCCheck(amd64)": {
+		"body": "CRCCheck(amd64);",
+		"prefix": "CRCCheck(amd64)"
 	},
 	"Call()": {
 		"body": "Call($1);",

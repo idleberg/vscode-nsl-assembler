@@ -99,9 +99,13 @@
 		"body": "CPU(x86);",
 		"prefix": "CPU(x68)"
 	},
-	"CRCCheck(amd64)": {
-		"body": "CRCCheck(amd64);",
-		"prefix": "CRCCheck(amd64)"
+	"CPU(amd64)": {
+		"body": "CPU(amd64);",
+		"prefix": "CPU(amd64)"
+	},
+	"CRCCheck()": {
+		"body": "CRCCheck($1);",
+		"prefix": "CRCCheck()"
 	},
 	"Call()": {
 		"body": "Call($1);",

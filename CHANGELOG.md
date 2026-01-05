@@ -2,6 +2,7 @@
 
 - add new language features
   - `CallInstDLL`
+  - `CPU`
   - `ExecShellWait`
   - `FileReadUTF16LE`
   - `FileReadWord`

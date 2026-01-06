@@ -2,7 +2,7 @@
 	"name": "nsl-assembler",
 	"displayName": "nsL Assembler",
 	"description": "Language syntax, IntelliSense and build system for nsL Assembler",
-	"version": "1.2.1",
+	"version": "1.3.0",
 	"publisher": "idleberg",
 	"license": "MIT",
 	"author": {

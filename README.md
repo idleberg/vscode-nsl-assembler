@@ -59,7 +59,7 @@ $ git clone https://github.com/idleberg/vscode-nsl-assembler nsl-assembler
 
 ## Usage
 
-To transpile [nsL Assembler][nsl], use the _nsL Assembler: Transpile code_
+To transpile [nsL Assembler][nsl], use the _nsL Assembler: Transpile Code_
 command from the
 [command-palette](https://code.visualstudio.com/docs/editor/codebasics#_command-palette).
 The path to `nsL.jar` is specified in your

@@ -1,10 +1,14 @@
-import * as vscode from 'vscode';
+import { commands, type ExtensionContext } from 'vscode';
 import { transpile } from './transpiler';
 
-export async function activate(context: vscode.ExtensionContext): Promise<void> {
+export async function activate(context: ExtensionContext): Promise<void> {
 	context.subscriptions.push(
-		vscode.commands.registerTextEditorCommand('extension.nsl-assembler.transpile', async () => {
+		commands.registerTextEditorCommand('extension.nsl-assembler.transpile', async () => {
 			return transpile();
+		}),
+
+		commands.registerCommand('extension.nsl-assembler.openSettings', async () => {
+			commands.executeCommand('workbench.action.openSettings', '@ext:idleberg.nsl-assembler');
 		}),
 	);
 }

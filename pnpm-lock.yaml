@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       vscode-get-config:
-        specifier: ^0.6.2
-        version: 0.6.2
+        specifier: ^0.6.3
+        version: 0.6.3
     devDependencies:
       '@commitlint/cli':
         specifier: ^20.4.2
@@ -2684,8 +2684,8 @@ packages:
     resolution: {integrity: sha512-Ck0EJbAGxHwprkzFO966t4/5QkRuzh+/I1RxhLgUKKwEn+Cd8NwM60mE3AqBZg5gYODoXW0EFsQvbZjRlvdqbg==}
     engines: {node: '>=4'}
 
-  vscode-get-config@0.6.2:
-    resolution: {integrity: sha512-Kc5FnI+ZE5dxF7IVb4cEqC/uJ5fg3f5VdAMKi+1FZ3d9Gdi3zRTOSN6uImDnVKUSbR6vn/LE9TSxuGp/YuVR7Q==}
+  vscode-get-config@0.6.3:
+    resolution: {integrity: sha512-jc/+fmR+9EC9JOyHZu2hVyIJaOCMt9CX8Y0M2Sxv6DQbrYGiFQZlvvjJOI12S/uGeTz+D9KfMclxAh+PIvIKyQ==}
     engines: {node: ^18.0.0 || ^20.0.0 || >=22.0.0}
 
   whatwg-encoding@3.1.1:
@@ -5522,7 +5522,7 @@ snapshots:
 
   version-range@4.15.0: {}
 
-  vscode-get-config@0.6.2:
+  vscode-get-config@0.6.3:
     dependencies:
       dlv: 1.1.3
 

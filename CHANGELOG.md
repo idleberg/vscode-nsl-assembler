@@ -1,3 +1,9 @@
+# v1.4.0 [#](https://github.com/idleberg/vscode-nsl-assembler/releases/tag/v1.4.0)
+
+- use native icons
+- add *Open Settings* command
+- update dependencies
+
 # v1.3.0 [#](https://github.com/idleberg/vscode-nsl-assembler/releases/tag/v1.3.0)
 
 - add new language features

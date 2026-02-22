@@ -2,7 +2,7 @@
 	"name": "nsl-assembler",
 	"displayName": "nsL Assembler",
 	"description": "Language syntax, IntelliSense and build system for nsL Assembler",
-	"version": "1.3.0",
+	"version": "1.4.0",
 	"publisher": "idleberg",
 	"license": "MIT",
 	"author": {
@@ -17,7 +17,6 @@
 		"dev": "npm run start",
 		"fix": "biome check --apply",
 		"lint": "biome check",
-		"prepare": "lefthook install",
 		"publish:ovsx": "ovsx publish --no-dependencies",
 		"publish:vsce": "vsce publish --githubBranch main --no-dependencies",
 		"start": "npm run build -- --watch",
@@ -42,21 +41,21 @@
 		"idleberg.nsis"
 	],
 	"dependencies": {
-		"vscode-get-config": "^0.6.2"
+		"vscode-get-config": "^0.6.3"
 	},
 	"devDependencies": {
-		"@commitlint/cli": "^20.3.0",
-		"@commitlint/config-conventional": "^20.3.0",
-		"@idleberg/configs": "^0.4.1",
+		"@commitlint/cli": "^20.4.2",
+		"@commitlint/config-conventional": "^20.4.2",
+		"@idleberg/configs": "^0.4.2",
 		"@nsis/logo": "0.1.1",
 		"@types/micromatch": "^4.0.10",
 		"@types/node": "24",
 		"@types/vscode": "1.85.0",
 		"@types/which": "^3.0.4",
 		"concurrently": "^9.2.1",
-		"ovsx": "^0.10.7",
+		"ovsx": "^0.10.9",
 		"sharp-cli": "^5.2.0",
-		"tsdown": "^0.18.3",
+		"tsdown": "^0.20.3",
 		"typescript": "^5.9.3"
 	},
 	"icon": "resources/logo.png",
@@ -123,11 +122,13 @@
 		"commands": [
 			{
 				"command": "extension.nsl-assembler.transpile",
-				"title": "Transpile nsL Assembler code",
-				"icon": {
-					"dark": "./resources/icon--build-dark.svg",
-					"light": "./resources/icon--build-light.svg"
-				}
+				"title": "nsL Assembler: Transpile Code",
+				"icon": "$(play)"
+			},
+			{
+				"command": "extension.nsl-assembler.openSettings",
+				"title": "nsL Assembler: Open Settings",
+				"icon": "$(settings)"
 			}
 		],
 		"keybindings": [
@@ -144,6 +145,11 @@
 					"when": "resourceLangId == nsl-assembler",
 					"command": "extension.nsl-assembler.transpile",
 					"group": "navigation@1"
+				},
+				{
+					"when": "resourceLangId == nsl-assembler",
+					"command": "extension.nsl-assembler.openSettings",
+					"group": "navigation@2"
 				}
 			]
 		},
@@ -152,6 +158,11 @@
 				"language": "nsl-assembler",
 				"path": "./snippets/core.nsl-assembler.json"
 			}
+		]
+	},
+	"pnpm": {
+		"onlyBuiltDependencies": [
+			"lefthook"
 		]
 	},
 	"packageManager": "pnpm@10.26.2+sha512.0e308ff2005fc7410366f154f625f6631ab2b16b1d2e70238444dd6ae9d630a8482d92a451144debc492416896ed16f7b114a86ec68b8404b2443869e68ffda6"

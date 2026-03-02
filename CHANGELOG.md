@@ -1,3 +1,8 @@
+# v2.0.0 [#](https://github.com/idleberg/vscode-nsl-assembler/releases/tag/v2.0.0)
+
+- require `vscode>=1.98.0`
+- license change: MIT-only
+
 # v1.4.0 [#](https://github.com/idleberg/vscode-nsl-assembler/releases/tag/v1.4.0)
 
 - use native icons

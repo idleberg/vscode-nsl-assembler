@@ -50,7 +50,7 @@
 		"@nsis/logo": "0.1.1",
 		"@types/micromatch": "^4.0.10",
 		"@types/node": "24",
-		"@types/vscode": "1.85.0",
+		"@types/vscode": "1.98.0",
 		"@types/which": "^3.0.4",
 		"concurrently": "^9.2.1",
 		"ovsx": "^0.10.9",
@@ -64,7 +64,7 @@
 		"theme": "dark"
 	},
 	"engines": {
-		"vscode": "^1.85.0"
+		"vscode": "^1.98.0"
 	},
 	"categories": [
 		"Programming Languages",

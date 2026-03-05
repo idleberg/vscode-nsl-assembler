@@ -2,6 +2,7 @@
 
 - require `vscode>=1.98.0`
 - license change: MIT-only
+- update dependencies
 
 # v1.4.0 [#](https://github.com/idleberg/vscode-nsl-assembler/releases/tag/v1.4.0)
 

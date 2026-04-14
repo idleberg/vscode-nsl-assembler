@@ -1,8 +1,7 @@
 # vscode-nsl-assembler
 
+[![License](https://img.shields.io/github/license/idleberg/vscode-applescript?color=blue&style=for-the-badge)](LICENSE)
 [![Version](https://img.shields.io/github/v/release/idleberg/vscode-nsl-assembler?style=for-the-badge)](https://github.com/idleberg/vscode-nsl-assembler/releases)
-[![Visual Studio Marketplace Installs](https://img.shields.io/visual-studio-marketplace/i/idleberg.nsl-assembler?style=for-the-badge&label=Marketplace)](https://marketplace.visualstudio.com/items?itemName=idleberg.nsl-assembler)
-[![Open VSX Downloads](https://img.shields.io/open-vsx/dt/idleberg/nsl-assembler?style=for-the-badge&label=Open%20VSX)](https://open-vsx.org/extension/idleberg/nsl-assembler)
 [![Build](https://img.shields.io/github/actions/workflow/status/idleberg/vscode-nsl-assembler/default.yml?style=for-the-badge)](https://github.com/idleberg/vscode-nsl-assembler/actions)
 
 Language syntax, snippets and build system for

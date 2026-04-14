@@ -1,6 +1,6 @@
 # vscode-nsl-assembler
 
-[![License](https://img.shields.io/github/license/idleberg/vscode-applescript?color=blue&style=for-the-badge)](LICENSE)
+[![License](https://img.shields.io/github/license/idleberg/vscode-nsl-assembler?color=blue&style=for-the-badge)](LICENSE)
 [![Version](https://img.shields.io/github/v/release/idleberg/vscode-nsl-assembler?style=for-the-badge)](https://github.com/idleberg/vscode-nsl-assembler/releases)
 [![Build](https://img.shields.io/github/actions/workflow/status/idleberg/vscode-nsl-assembler/default.yml?style=for-the-badge)](https://github.com/idleberg/vscode-nsl-assembler/actions)
 

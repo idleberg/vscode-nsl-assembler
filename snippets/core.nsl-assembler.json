@@ -4,11 +4,11 @@
 		"prefix": "#define"
 	},
 	"#if": {
-		"body": "#if\n\t${1:// your code here}\n#ifend",
+		"body": "#if\n\t${1:// your code here}\n#endif",
 		"prefix": "#if"
 	},
 	"#if..#else": {
-		"body": "#if\n\t${1:// your code here}\n#else\n\t${2:// your code here}\n#ifend",
+		"body": "#if\n\t${1:// your code here}\n#else\n\t${2:// your code here}\n#endif",
 		"prefix": "#if..#else"
 	},
 	"#macro": {
@@ -23,17 +23,13 @@
 		"body": "Abort($1);",
 		"prefix": "Abort()"
 	},
+	"AbortCalled()": {
+		"body": "AbortCalled()",
+		"prefix": "AbortCalled()"
+	},
 	"AddBrandingImage()": {
 		"body": "AddBrandingImage($1);",
 		"prefix": "AddBrandingImage()"
-	},
-	"AddIncludeDir()": {
-		"body": "AddIncludeDir($1);",
-		"prefix": "AddIncludeDir()"
-	},
-	"AddPluginDir()": {
-		"body": "AddPluginDir($1);",
-		"prefix": "AddPluginDir()"
 	},
 	"AddSize()": {
 		"body": "AddSize($1);",
@@ -62,6 +58,10 @@
 	"AllowSkipFiles(on)": {
 		"body": "AllowSkipFiles(on);",
 		"prefix": "AllowSkipFiles(on)"
+	},
+	"AltRegView()": {
+		"body": "AltRegView()",
+		"prefix": "AltRegView()"
 	},
 	"AutoCloseWindow()": {
 		"body": "AutoCloseWindow($1);",
@@ -207,6 +207,10 @@
 		"body": "EnumRegValue($1);",
 		"prefix": "EnumRegValue()"
 	},
+	"Errors()": {
+		"body": "Errors()",
+		"prefix": "Errors()"
+	},
 	"Exch()": {
 		"body": "Exch($1);",
 		"prefix": "Exch()"
@@ -246,6 +250,10 @@
 	"FileErrorText()": {
 		"body": "FileErrorText($1);",
 		"prefix": "FileErrorText()"
+	},
+	"FileExists()": {
+		"body": "FileExists(${1:path})",
+		"prefix": "FileExists()"
 	},
 	"FileOpen()": {
 		"body": "FileOpen($1);",
@@ -343,6 +351,10 @@
 		"body": "GetFileTimeLocal($1);",
 		"prefix": "GetFileTimeLocal()"
 	},
+	"GetFullPathName()": {
+		"body": "GetFullPathName(${1:path});",
+		"prefix": "GetFullPathName()"
+	},
 	"GetFunctionAddress()": {
 		"body": "GetFunctionAddress($1);",
 		"prefix": "GetFunctionAddress()"
@@ -383,30 +395,6 @@
 		"body": "Icon($1);",
 		"prefix": "Icon()"
 	},
-	"IfAbort()": {
-		"body": "IfAbort($1);",
-		"prefix": "IfAbort()"
-	},
-	"IfErrors()": {
-		"body": "IfErrors($1);",
-		"prefix": "IfErrors()"
-	},
-	"IfFileExists()": {
-		"body": "IfFileExists($1);",
-		"prefix": "IfFileExists()"
-	},
-	"IfRebootFlag()": {
-		"body": "IfRebootFlag($1);",
-		"prefix": "IfRebootFlag()"
-	},
-	"IfSilent()": {
-		"body": "IfSilent($1);",
-		"prefix": "IfSilent()"
-	},
-	"Include()": {
-		"body": "Include($1);",
-		"prefix": "Include()"
-	},
 	"InitPluginsDir()": {
 		"body": "InitPluginsDir($1);",
 		"prefix": "InitPluginsDir()"
@@ -443,9 +431,17 @@
 		"body": "InstallDirRegKey($1);",
 		"prefix": "InstallDirRegKey()"
 	},
+	"Int64Fmt()": {
+		"body": "Int64Fmt(${1:format}, ${2:numberstring});",
+		"prefix": "Int64Fmt()"
+	},
 	"IntFmt()": {
 		"body": "IntFmt($1);",
 		"prefix": "IntFmt()"
+	},
+	"IntPtrOp()": {
+		"body": "IntPtrOp(${1:value1}, ${2:op}, ${3:value2});",
+		"prefix": "IntPtrOp()"
 	},
 	"IsWindow()": {
 		"body": "IsWindow($1);",
@@ -495,6 +491,26 @@
 		"body": "ManifestAppendCustomString(${1:path}, ${2:string});",
 		"prefix": "ManifestAppendCustomString()"
 	},
+	"ManifestDPIAwareness()": {
+		"body": "ManifestDPIAwareness($1);",
+		"prefix": "ManifestDPIAwareness()"
+	},
+	"ManifestDPIAwareness(unaware)": {
+		"body": "ManifestDPIAwareness(\"unaware\");",
+		"prefix": "ManifestDPIAwareness(unaware)"
+	},
+	"ManifestDPIAwareness(system)": {
+		"body": "ManifestDPIAwareness(\"system\");",
+		"prefix": "ManifestDPIAwareness(system)"
+	},
+	"ManifestDPIAwareness(PerMonitor)": {
+		"body": "ManifestDPIAwareness(\"PerMonitor\");",
+		"prefix": "ManifestDPIAwareness(PerMonitor)"
+	},
+	"ManifestDPIAwareness(PerMonitorV2)": {
+		"body": "ManifestDPIAwareness(\"PerMonitorV2\");",
+		"prefix": "ManifestDPIAwareness(PerMonitorV2)"
+	},
 	"ManifestDisableWindowFiltering()": {
 		"body": "ManifestDisableWindowFiltering($1);",
 		"prefix": "ManifestDisableWindowFiltering()"
@@ -535,6 +551,10 @@
 		"body": "ManifestLongPathAware(false);",
 		"prefix": "ManifestLongPathAware(false)"
 	},
+	"ManifestMaxVersionTested()": {
+		"body": "ManifestMaxVersionTested(${1:version});",
+		"prefix": "ManifestMaxVersionTested()"
+	},
 	"ManifestSupportedOS()": {
 		"body": "ManifestSupportedOS($1);",
 		"prefix": "ManifestSupportedOS()"
@@ -551,9 +571,29 @@
 		"body": "Name(\"${1:name}\");",
 		"prefix": "Name()"
 	},
+	"Nop()": {
+		"body": "Nop();",
+		"prefix": "Nop()"
+	},
 	"OutFile()": {
 		"body": "OutFile(\"${1:file_name}.exe\");",
 		"prefix": "OutFile()"
+	},
+	"PEAddResource()": {
+		"body": "PEAddResource(${1:file}, ${2:type}, ${3:name});",
+		"prefix": "PEAddResource()"
+	},
+	"PEDllCharacteristics()": {
+		"body": "PEDllCharacteristics(${1:disable}, ${2:enable});",
+		"prefix": "PEDllCharacteristics()"
+	},
+	"PERemoveResource()": {
+		"body": "PERemoveResource(${1:type}, ${2:name}, ${3:language});",
+		"prefix": "PERemoveResource()"
+	},
+	"PESubsysVer()": {
+		"body": "PESubsysVer(${1:major}, ${2:minor});",
+		"prefix": "PESubsysVer()"
 	},
 	"Pop()": {
 		"body": "Pop($1);",
@@ -583,6 +623,10 @@
 		"body": "ReadINIStr($1);",
 		"prefix": "ReadINIStr()"
 	},
+	"ReadMemory()": {
+		"body": "ReadMemory(${1:address}, ${2:bytes});",
+		"prefix": "ReadMemory()"
+	},
 	"ReadRegDWORD()": {
 		"body": "ReadRegDWORD($1);",
 		"prefix": "ReadRegDWORD()"
@@ -594,6 +638,10 @@
 	"Reboot()": {
 		"body": "Reboot($1);",
 		"prefix": "Reboot()"
+	},
+	"RebootFlag()": {
+		"body": "RebootFlag()",
+		"prefix": "RebootFlag()"
 	},
 	"RegDLL()": {
 		"body": "RegDLL($1);",
@@ -630,6 +678,10 @@
 	"ReserveFileRecursive()": {
 		"body": "ReserveFileRecursive($1);",
 		"prefix": "ReserveFileRecursive()"
+	},
+	"RtlLanguage()": {
+		"body": "RtlLanguage()",
+		"prefix": "RtlLanguage()"
 	},
 	"SearchPath()": {
 		"body": "SearchPath($1);",
@@ -722,6 +774,10 @@
 	"SetCtlColors()": {
 		"body": "SetCtlColors($1);",
 		"prefix": "SetCtlColors()"
+	},
+	"SetCtlColorsBranding()": {
+		"body": "SetCtlColorsBranding(${1:hwnd});",
+		"prefix": "SetCtlColorsBranding()"
 	},
 	"SetCurInstType()": {
 		"body": "SetCurInstType($1);",
@@ -831,6 +887,18 @@
 		"body": "SetOverwrite(\"try\");",
 		"prefix": "SetOverwrite(try)"
 	},
+	"SetPluginUnload()": {
+		"body": "SetPluginUnload($1);",
+		"prefix": "SetPluginUnload()"
+	},
+	"SetPluginUnload(manual)": {
+		"body": "SetPluginUnload(\"manual\");",
+		"prefix": "SetPluginUnload(manual)"
+	},
+	"SetPluginUnload(alwaysoff)": {
+		"body": "SetPluginUnload(\"alwaysoff\");",
+		"prefix": "SetPluginUnload(alwaysoff)"
+	},
 	"SetRebootFlag()": {
 		"body": "SetRebootFlag($1);",
 		"prefix": "SetRebootFlag()"
@@ -883,6 +951,10 @@
 		"body": "SetSilent(\"silent\");",
 		"prefix": "SetSilent(silent)"
 	},
+	"ShellVarContextAll()": {
+		"body": "ShellVarContextAll()",
+		"prefix": "ShellVarContextAll()"
+	},
 	"ShowInstDetails()": {
 		"body": "ShowInstDetails($1);",
 		"prefix": "ShowInstDetails()"
@@ -918,6 +990,10 @@
 	"ShowWindow()": {
 		"body": "ShowWindow($1);",
 		"prefix": "ShowWindow()"
+	},
+	"Silent()": {
+		"body": "Silent()",
+		"prefix": "Silent()"
 	},
 	"SilentInstall()": {
 		"body": "SilentInstall($1);",
@@ -1030,6 +1106,10 @@
 	"VIAddVersionKey()": {
 		"body": "VIAddVersionKey($1);",
 		"prefix": "VIAddVersionKey()"
+	},
+	"VIFileVersion()": {
+		"body": "VIFileVersion(${1:version});",
+		"prefix": "VIFileVersion()"
 	},
 	"VIProductVersion()": {
 		"body": "VIProductVersion($1);",

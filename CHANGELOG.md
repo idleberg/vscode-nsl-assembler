@@ -1,4 +1,4 @@
-# v2.1.0 [#](https://github.com/idleberg/vscode-nsl-assembler/releases/tag/v2.0.0)
+# v2.1.0 [#](https://github.com/idleberg/vscode-nsl-assembler/releases/tag/v2.1.0)
 
 - support nsL assembler v1.2.0 language features
   - `AltRegView`

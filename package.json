@@ -38,7 +38,11 @@
 	"type": "commonjs",
 	"main": "./lib/index.cjs",
 	"files": [
-		"lib"
+		"config",
+		"lib",
+		"resources",
+		"snippets",
+		"syntaxes"
 	],
 	"extensionDependencies": [
 		"idleberg.nsis"

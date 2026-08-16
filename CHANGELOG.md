@@ -1,3 +1,34 @@
+# v2.0.1
+
+- support nsL assembler v1.2.0 language features
+  - `AltRegView`
+  - `GetFullPathName`
+  - `Int64Fmt`
+  - `IntPtrOp`
+  - `ManifestDPIAwareness`
+  - `ManifestMaxVersionTested`
+  - `Nop`
+  - `PEAddResource`
+  - `PEDllCharacteristics`
+  - `PERemoveResource`
+  - `PESubsysVer`
+  - `ReadMemory`
+  - `RtlLanguage`
+  - `SetCtlColorsBranding`
+  - `SetPluginUnload`
+  - `ShellVarContextAll`
+  - `VIFileVersion`
+- fix instruction names that used their NSIS spelling instead of their nsL one
+  - `IfAbort` → `AbortCalled`
+  - `IfErrors` → `Errors`
+  - `IfFileExists` → `FileExists`
+  - `IfRebootFlag` → `RebootFlag`
+  - `IfSilent` → `Silent`
+  - `ManifestDPIAwareInstruction` → `ManifestDPIAware`
+- add missing `UnsafeStrCpy` instruction
+- remove `AddIncludeDir`, `AddPluginDir` and `Include`, which are not nsL instructions
+- fix pre-processor directives: `#ifend` → `#endif`, add `#elseif`, `#error`, `#include`, `#redefine` and `#undef`
+
 # v2.0.0 [#](https://github.com/idleberg/vscode-nsl-assembler/releases/tag/v2.0.0)
 
 - require `vscode>=1.98.0`

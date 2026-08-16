@@ -62,7 +62,7 @@
 
         <dict>
             <key>match</key>
-            <string>^\s*(?i)#(define|else|endif|if|ifend|macro|macroend|nsis|nsisend|return)\b</string>
+            <string>^\s*(?i)#(define|elseif|else|endif|error|if|include|macro|macroend|nsis|nsisend|redefine|return|undef)\b</string>
             <key>name</key>
             <string>keyword.other.nsl</string>
         </dict>
